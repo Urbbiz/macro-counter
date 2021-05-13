@@ -8,7 +8,7 @@ body {
     float: right;
 }
 
-h1 {
+header {
     display: inline-block;
     text-align: center;
     line-height: 60px;
@@ -21,7 +21,7 @@ h1 {
     z-index: 1;
 }
 
-h1+* {
+header+* {
     margin-top: 60px;
 }
 
