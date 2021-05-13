@@ -14,4 +14,12 @@ diary.init();
 diary.addMeal({
     text: 'Labas rytas 1'
 });
+
+diary.addMeal({
+    text: 'Labas rytas 2'
+});
+
+diary.addMeal({
+    text: 'Labas rytas 2'
+});
 console.log(diary);

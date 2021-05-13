@@ -11,6 +11,7 @@ class Diary {
         if (!this.isValidSelector()) {
             return false;
         }
+        this.updateStyle();
 
 
     }
@@ -24,6 +25,12 @@ class Diary {
         return true;
     }
 
+    updateStyle() { // jeigu nera main elemente class list, tuomet ja prides si funkcija
+        if (!this.DOM.classList.contains('list')) {
+            this.DOM.classList.add('list')
+        }
+    }
+
     addMeal(meal) {
         this.diaryMeals.push(meal);
         this.renderDiaryMeals();
@@ -32,11 +39,11 @@ class Diary {
 
 
     }
-    generateMealItem() {
+    generateMealItem(meal) {
 
-        return `<div class="col-4 col-sm-6 col-xs-12">
+        return `<div class="col-4 col-sm-6 col-xs-12 list">
         <div class="block item ">
-            <h3>name </h3>
+            <h3>name:  ${meal.text}</h3>
             <p> carb g. </p>
             <p> protein g. </p>
             <p> fat g. </p>
