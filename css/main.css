@@ -1,5 +1,6 @@
 @import './components/reset.css';
 @import './components/button.css';
+@import './components/plus.css';
 body {
     background-color: #f9f9f9;
 }
@@ -8,7 +9,7 @@ body {
     float: right;
 }
 
-h1 {
+header {
     display: inline-block;
     text-align: center;
     line-height: 60px;
@@ -21,23 +22,23 @@ h1 {
     z-index: 1;
 }
 
-h1+* {
+header+* {
     margin-top: 60px;
 }
 
 .list {
     display: grid;
-    min-height: calc(100vh - 60px);
+    /* min-height: calc(100vh - 60px); */
     grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
-    padding: 30px;
-    gap: 30px;
+    padding: 10px;
+    gap: 20px;
     place-content: start;
 }
 
 .list>.item {
     display: inline-block;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
@@ -47,10 +48,81 @@ h1+* {
 .list>.item>.actions {
     display: none;
     position: absolute;
-    top: -5px;
+    bottom: 5px;
     right: 5px;
 }
 
 .list>.item:hover>.actions {
     display: inline-block;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.lightbox.show {
+    display: block;
+}
+
+.lightbox>.background {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #0001;
+}
+
+.lightbox>.content {
+    display: inline-block;
+    min-width: 280px;
+    width: 50%;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px #0003;
+}
+
+form>.title {
+    display: inline-block;
+    width: 100%;
+}
+
+input {
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    font-size: 17px;
+    line-height: 23px;
+    min-height: 20px;
+    max-height: 30px;
+    resize: vertical;
+    border: 1px solid #777;
+}
+
+.lightbox[data-form="add"] form.add,
+.lightbox[data-form="update"] form.update {
+    display: inline-block;
+}
+
+form>* {
+    /* float: left; */
+    text-align: center;
+}
+
+form>*+* {
+    margin-top: 15px;
 }
