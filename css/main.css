@@ -1,4 +1,5 @@
-@import './reset.css';
+@import './components/reset.css';
+@import './components/button.css';
 body {
     background-color: #f9f9f9;
 }
