@@ -1,5 +1,6 @@
 @import './components/reset.css';
 @import './components/button.css';
+@import './components/plus.css';
 body {
     background-color: #f9f9f9;
 }
