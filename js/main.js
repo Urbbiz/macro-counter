@@ -40,11 +40,12 @@ buttonCancelAdd.addEventListener('click', e => {
 
 buttonAdd.addEventListener('click', e => {
     e.preventDefault();
-    const meal = {
-        Name: newName.value,
-        Carb: newCarb.value,
-    }
-    diary.addMeal(meal);
+    diary.addMeal(newName.value)
+        // const meal = {
+        //     Name: newName.value,
+        //     Carb: newCarb.value,
+        // }
+        // diary.addMeal(meal);
 
 
     console.log('add suveike');
