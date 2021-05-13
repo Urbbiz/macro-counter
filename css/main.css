@@ -55,3 +55,74 @@ header+* {
 .list>.item:hover>.actions {
     display: inline-block;
 }
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.lightbox.show {
+    display: block;
+}
+
+.lightbox>.background {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #0001;
+}
+
+.lightbox>.content {
+    display: inline-block;
+    min-width: 280px;
+    width: 50%;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px #0003;
+}
+
+form>.title {
+    display: inline-block;
+    width: 100%;
+}
+
+input {
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    font-size: 17px;
+    line-height: 23px;
+    min-height: 20px;
+    max-height: 30px;
+    resize: vertical;
+    border: 1px solid #777;
+}
+
+.lightbox[data-form="add"] form.add,
+.lightbox[data-form="update"] form.update {
+    display: inline-block;
+}
+
+form>* {
+    /* float: left; */
+    text-align: center;
+}
+
+form>*+* {
+    margin-top: 20px;
+}
