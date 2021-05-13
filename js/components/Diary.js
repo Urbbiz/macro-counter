@@ -32,6 +32,7 @@ class Diary {
     }
 
     addMeal(meal) {
+
         this.diaryMeals.push(meal);
         this.renderDiaryMeals();
         return true;
@@ -43,8 +44,8 @@ class Diary {
 
         return `<div class="col-4 col-sm-6 col-xs-12 list">
         <div class="block item ">
-            <h3>name:  ${meal.text}</h3>
-            <p> carb g. </p>
+            <h3>name:  ${meal.newName}</h3>
+            <p> carb ${meal.newCarb} g. </p>
             <p> protein g. </p>
             <p> fat g. </p>
             <p> kcal. </p>
