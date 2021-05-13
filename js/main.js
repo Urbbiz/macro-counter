@@ -17,17 +17,12 @@ const buttonAdd = document.getElementById('button-add');
 
 
 // Init objects
-
 const diary = new Diary({
     selector: 'main'
-
 });
-
-
 diary.init();
 
 // add events
-
 
 addNewButton.addEventListener('click', () => {
     lightbox.classList.add('show'); //pridejom show css stiliu ir pasirode add forma
@@ -40,13 +35,16 @@ buttonCancelAdd.addEventListener('click', e => {
 
 buttonAdd.addEventListener('click', e => {
     e.preventDefault();
-    diary.addMeal(newName.value)
-        // const meal = {
-        //     Name: newName.value,
-        //     Carb: newCarb.value,
-        // }
-        // diary.addMeal(meal);
-
+    const meal = {
+        name: newName.value,
+        carb: newCarb.value,
+        protein: newProtein.value,
+        fat: newFat.value,
+        kcal: newkcal.value,
+    }
+    diary.addMeal(meal);
+    diary.clearAddForm();
+    lightbox.classList.remove('show');
 
     console.log('add suveike');
 })
