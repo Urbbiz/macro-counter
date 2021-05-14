@@ -1,6 +1,7 @@
 class EditForm {
     constructor(params) {
         this.selector = params.selector;
+        this.diaryObject = params.diaryObject;
 
         this.DOM = null;
         this.lightbox = null;
@@ -19,6 +20,7 @@ class EditForm {
             return false;
         }
         this.findInnerElements();
+        this.addEvents();
         console.log(this);
     }
 
@@ -44,13 +46,32 @@ class EditForm {
         this.buttonUpdate = document.getElementById('button-update');
     }
 
-    show() {
+    show(mealIndex) {
+        console.log('Gavau:', mealIndex);
         this.lightbox.dataset.form = 'update';
         this.lightbox.classList.add('show');
+
+        this.updateName.value = this.diaryObject.diaryMeals[mealIndex].name;
+        this.updateCarb.value = this.diaryObject.diaryMeals[mealIndex].carb;
+        this.updateProtein.value = this.diaryObject.diaryMeals[mealIndex].protein;
+        this.updateFat.value = this.diaryObject.diaryMeals[mealIndex].fat;
+        this.updateKcal.value = this.diaryObject.diaryMeals[mealIndex].kcal;
     }
     hide() {
-
         this.lightbox.classList.remove('show');
+    }
+
+    addEvents() {
+        this.buttonCancelUpdate.addEventListener('click', e => {
+            e.preventDefault();
+            this.hide();
+        });
+
+        this.buttonUpdate.addEventListener('click', e => {
+            e.preventDefault();
+            this.hide();
+            console.log(this.diaryObject);
+        })
     }
 }
 export { EditForm };

@@ -1,3 +1,5 @@
+// import { EditForm } from "./EditForm.js";
+
 class Diary {
     constructor(params) {
         this.selector = params.selector;
@@ -5,6 +7,7 @@ class Diary {
 
         this.diaryMeals = []; //tuscias meals arejus
 
+        this.editForm = null;
     }
 
     init() {
@@ -72,7 +75,8 @@ class Diary {
 
 
     // CRUD: update
-    updateMeal() {
+    updateMeal(newText) {
+        console.log('New Text:', newText);
 
     }
 
@@ -101,7 +105,7 @@ class Diary {
             const removeBtn = meal.querySelector('.btn.small.remove');
 
             editBtn.addEventListener('click', () => {
-                this.initDiaryMealEditing(i);
+                this.editForm.show(i);
                 console.log('bla bla');
             });
             removeBtn.addEventListener('click', () => {

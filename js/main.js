@@ -24,9 +24,13 @@ const diary = new Diary({
 diary.init();
 
 const editForm = new EditForm({
-    selector: 'form.update'
+    selector: 'form.update',
+    diaryObject: diary
 });
 editForm.init();
+
+diary.editForm = editForm;
+
 
 // add events
 addNewButton.addEventListener('click', () => {
