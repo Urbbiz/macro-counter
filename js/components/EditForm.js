@@ -3,6 +3,7 @@ class EditForm {
         this.selector = params.selector;
 
         this.DOM = null;
+        this.lightbox = null;
         this.updateName = null;
         this.updateCarb = null;
         this.updateProtein = null;
@@ -17,7 +18,8 @@ class EditForm {
         if (!this.isValidSelector()) {
             return false;
         }
-
+        this.findInnerElements();
+        console.log(this);
     }
 
     isValidSelector() {
@@ -30,6 +32,9 @@ class EditForm {
     }
 
     findInnerElements() {
+        // this.lightbox = document.querySelector('.lightbox');
+        this.lightbox = this.DOM.closest('.lightbox');
+
         this.updateName = document.getElementById('edit-name');
         this.updateCarb = document.getElementById('edit-carb');
         this.updateProtein = document.getElementById('edit-protein');
@@ -37,6 +42,15 @@ class EditForm {
         this.updateKcal = document.getElementById('edit-kcal');
         this.buttonCancelUpdate = document.getElementById('button-cancel-update');
         this.buttonUpdate = document.getElementById('button-update');
+    }
+
+    show() {
+        this.lightbox.dataset.form = 'update';
+        this.lightbox.classList.add('show');
+    }
+    hide() {
+
+        this.lightbox.classList.remove('show');
     }
 }
 export { EditForm };
