@@ -45,7 +45,7 @@ class Diary {
 
         return `<div class="col-4 col-sm-6 col-xs-12 list">
         <div class="block item ">
-            <h3>name:  ${meal.name}</h3>
+            <h3>  ${meal.name}</h3>
             <p> carb ${meal.carb} g. </p>
             <p> protein ${meal.protein} g. </p>
             <p> fat ${meal.fat} g. </p>
@@ -97,7 +97,7 @@ class Diary {
 
         for (let i = 0; i < meals.length; i++) {
             const meal = meals[i];
-            const editBtn = meal.querySelector('.btn.smal.edit');
+            const editBtn = meal.querySelector('.btn.small.edit');
             const removeBtn = meal.querySelector('.btn.small.remove');
 
             editBtn.addEventListener('click', () => {
