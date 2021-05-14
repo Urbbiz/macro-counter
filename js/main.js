@@ -26,6 +26,7 @@ diary.init();
 
 addNewButton.addEventListener('click', () => {
     lightbox.classList.add('show'); //pridejom show css stiliu ir pasirode add forma
+    lightbox.dataset.form = 'add'; // sita eilute dar labiau nurodo kuri forma nuretu buti parodyta.
 })
 
 buttonCancelAdd.addEventListener('click', e => {

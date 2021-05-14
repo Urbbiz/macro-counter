@@ -97,7 +97,7 @@ class Diary {
 
         for (let i = 0; i < meals.length; i++) {
             const meal = meals[i];
-            const editBtn = meal.querySelector('.btn.smal.edit');
+            const editBtn = meal.querySelector('.btn.small.edit');
             const removeBtn = meal.querySelector('.btn.small.remove');
 
             editBtn.addEventListener('click', () => {
@@ -115,6 +115,11 @@ class Diary {
     };
     initDiaryMealEditing(itemDOM) {
         console.log('inicijuojamas TODO redagavimas');
+
+        const lightbox = document.querySelector('.lightbox');
+        lightbox.classList.add('show');
+        lightbox.dataset.form = 'update'; // nurodo kuria butent forma parodyti.
+
     }
 
 }
