@@ -1,5 +1,6 @@
 // All imports
 import { Diary } from './components/Diary.js';
+import { EditForm } from './components/EditForm.js';
 
 
 // run
@@ -22,8 +23,12 @@ const diary = new Diary({
 });
 diary.init();
 
-// add events
+const editForm = new EditForm({
+    selector: 'form.update'
+});
+editForm.init();
 
+// add events
 addNewButton.addEventListener('click', () => {
     lightbox.classList.add('show'); //pridejom show css stiliu ir pasirode add forma
     lightbox.dataset.form = 'add'; // sita eilute dar labiau nurodo kuri forma nuretu buti parodyta.
