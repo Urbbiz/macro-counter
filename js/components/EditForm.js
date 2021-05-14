@@ -13,6 +13,8 @@ class EditForm {
         this.buttonCancelUpdate = null;
         this.buttonUpdate = null;
 
+        this.lastEditedMealIndex = null;
+
     }
 
     init() {
@@ -47,7 +49,7 @@ class EditForm {
     }
 
     show(mealIndex) {
-        console.log('Gavau:', mealIndex);
+        this.lastEditedMealIndex = mealIndex;
         this.lightbox.dataset.form = 'update';
         this.lightbox.classList.add('show');
 
@@ -70,7 +72,8 @@ class EditForm {
         this.buttonUpdate.addEventListener('click', e => {
             e.preventDefault();
             this.hide();
-            console.log(this.diaryObject);
+            this.diaryObject.updateMeal(this.lastEditedMealIndex, this.updateName.value, this.updateCarb.value, this.updateProtein.value, this.updateFat.value, this.updateKcal.value);
+            // this.diaryObject.updateMeal(this.lastEditedMealIndex, this.updateCarb.value)
         })
     }
 }
