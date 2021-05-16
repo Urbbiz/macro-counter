@@ -6,6 +6,7 @@ class Diary {
         this.DOM = null;
 
         this.diaryMeals = []; //tuscias meals arejus
+        this.lastCreatedMealId = 0;
 
         this.editForm = null;
     }
@@ -37,8 +38,16 @@ class Diary {
     }
 
     // CRUD: create 
-    addMeal(meal) {
-        console.log(meal);
+    addMeal(name, carb, protein, fat, kcal) {
+        const meal = {
+            id: ++this.lastCreatedMealId,
+            name: name,
+            carb: carb,
+            protein: protein,
+            fat: fat,
+            kcal: kcal,
+        }
+
         this.diaryMeals.push(meal);
         this.renderDiaryMeals();
 
@@ -88,6 +97,8 @@ class Diary {
         this.renderDiaryMeals();
         // console.log('New Text:', newText);
 
+        localStorage.setItem(mealIndex + 1, JSON.stringify(this.diaryMeals[mealIndex]));
+
     }
 
     // CRUD: delete
@@ -127,21 +138,15 @@ class Diary {
 
     getInfoFromLocalStorage() {
 
-        // const item = localStorage.getItem('4');
-        // const obj = JSON.parse(item);
-        // console.log(item);
+        const keys = Object.keys(localStorage).sort();
 
-        let mealIndex = 1,
-            meal = null;
-        do {
-            meal = localStorage.getItem(mealIndex);
+        for (let key of keys) {
+            const meal = localStorage.getItem(key);
             const obj = JSON.parse(meal);
+            this.diaryMeals.push(obj);
 
-            if (meal) {
-                this.diaryMeals.push(obj);
-            }
-            mealIndex++
-        } while (meal !== null);
+        }
+
         console.log(this.diaryMeals);
     }
 

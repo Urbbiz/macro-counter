@@ -45,14 +45,15 @@ buttonCancelAdd.addEventListener('click', e => {
 
 buttonAdd.addEventListener('click', e => {
     e.preventDefault();
-    const meal = {
-        name: newName.value,
-        carb: newCarb.value,
-        protein: newProtein.value,
-        fat: newFat.value,
-        kcal: newkcal.value,
-    }
-    diary.addMeal(meal);
+    // const meal = {
+    //     id: ++diary.lastCreatedMealId,
+    //     name: newName.value,
+    //     carb: newCarb.value,
+    //     protein: newProtein.value,
+    //     fat: newFat.value,
+    //     kcal: newkcal.value,
+    // }
+    diary.addMeal(newName.value, newCarb.value, newProtein.value, newFat.value, newkcal.value, );
     diary.clearAddForm();
     lightbox.classList.remove('show');
 
