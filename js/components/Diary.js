@@ -15,6 +15,8 @@ class Diary {
             return false;
         }
         this.updateStyle();
+        this.getInfoFromLocalStorage();
+        this.renderDiaryMeals();
 
 
     }
@@ -122,49 +124,26 @@ class Diary {
             });
         }
     };
-    // initDiaryMealEditing(mealIndex) {
-    //     const meal = this.diaryMeals[mealIndex];
 
-    //     console.log('inicijuojamas TODO redagavimas');
+    getInfoFromLocalStorage() {
 
-    //     const lightbox = document.querySelector('.lightbox');
-    //     const updateName = document.getElementById('edit-name');
-    //     const updateCarb = document.getElementById('edit-carb');
-    //     const updateProtein = document.getElementById('edit-protein');
-    //     const updateFat = document.getElementById('edit-fat');
-    //     const updateKcal = document.getElementById('edit-kcal');
-    //     const buttonCancelUpdate = document.getElementById('button-cancel-update');
-    //     const buttonUpdate = document.getElementById('button-update');
+        // const item = localStorage.getItem('4');
+        // const obj = JSON.parse(item);
+        // console.log(item);
 
-    //     lightbox.dataset.form = 'update'; // nurodo kuria butent forma parodyti.
+        let mealIndex = 1,
+            meal = null;
+        do {
+            meal = localStorage.getItem(mealIndex);
+            const obj = JSON.parse(meal);
 
-    //     updateName.value = meal.name;
-    //     updateCarb.value = meal.carb;
-    //     updateProtein.value = meal.protein;
-    //     updateFat.value = meal.fat;
-    //     updateKcal.value = meal.kcal;
-
-    //     lightbox.classList.add('show');
-
-    //     buttonCancelUpdate.addEventListener('click', e => {
-    //         e.preventDefault();
-    //         lightbox.classList.remove('show');
-    //     })
-
-    //     buttonUpdate.addEventListener('click', e => {
-    //         e.preventDefault();
-
-    //         this.diaryMeals[mealIndex].name = updateName.value;
-    //         this.diaryMeals[mealIndex].carb = updateCarb.value;
-    //         this.diaryMeals[mealIndex].protein = updateProtein.value;
-    //         this.diaryMeals[mealIndex].fat = updateFat.value;
-    //         this.diaryMeals[mealIndex].kcal = updateKcal.value;
-
-    //         lightbox.classList.remove('show');
-    //         this.renderDiaryMeals();
-    //     })
-
-    // }
+            if (meal) {
+                this.diaryMeals.push(obj);
+            }
+            mealIndex++
+        } while (meal !== null);
+        console.log(this.diaryMeals);
+    }
 
 }
 
