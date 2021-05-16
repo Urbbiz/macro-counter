@@ -145,7 +145,11 @@ class Diary {
         for (let key of keys) {
             const meal = localStorage.getItem(key);
             const obj = JSON.parse(meal);
-            this.diaryMeals.push(obj);
+            if (key == 'last-id') {
+                this.lastCreatedMealId = obj
+            } else {
+                this.diaryMeals.push(obj);
+            }
 
         }
 
