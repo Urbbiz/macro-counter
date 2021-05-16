@@ -36,9 +36,11 @@ class Diary {
 
     // CRUD: create 
     addMeal(meal) {
-
+        console.log(meal);
         this.diaryMeals.push(meal);
         this.renderDiaryMeals();
+
+        localStorage.setItem(this.diaryMeals.length, JSON.stringify(meal));
         return true;
 
 
@@ -82,7 +84,7 @@ class Diary {
         this.diaryMeals[mealIndex].fat = newFat;
         this.diaryMeals[mealIndex].kcal = newkcal;
         this.renderDiaryMeals();
-        console.log('New Text:', newText);
+        // console.log('New Text:', newText);
 
     }
 
@@ -112,11 +114,11 @@ class Diary {
 
             editBtn.addEventListener('click', () => {
                 this.editForm.show(i);
-                console.log('bla bla');
+                // console.log('bla bla');
             });
             removeBtn.addEventListener('click', () => {
                 this.deleteMeal(i);
-                console.log('bla bla');
+                // console.log('bla bla');
             });
         }
     };

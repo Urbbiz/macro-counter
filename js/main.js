@@ -56,7 +56,7 @@ buttonAdd.addEventListener('click', e => {
     diary.clearAddForm();
     lightbox.classList.remove('show');
 
-    console.log('add suveike');
+    // console.log('add suveike');
 })
 
 addEventListener('keyup', ({ key }) => { //spaudzian escape visada uzdarys forma
@@ -66,6 +66,3 @@ addEventListener('keyup', ({ key }) => { //spaudzian escape visada uzdarys forma
     }
 
 });
-
-
-console.log(diary);
