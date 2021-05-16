@@ -51,7 +51,7 @@ class Diary {
         this.diaryMeals.push(meal);
         this.renderDiaryMeals();
 
-        localStorage.setItem(this.diaryMeals.length, JSON.stringify(meal));
+        localStorage.setItem(meal.id, JSON.stringify(meal));
         localStorage.setItem('last-id', this.lastCreatedMealId);
         return true;
 
@@ -98,7 +98,9 @@ class Diary {
         this.renderDiaryMeals();
         // console.log('New Text:', newText);
 
-        localStorage.setItem(mealIndex + 1, JSON.stringify(this.diaryMeals[mealIndex]));
+        const meal = this.diaryMeals[mealIndex];
+
+        localStorage.setItem(meal.id, JSON.stringify(meal));
 
     }
 
