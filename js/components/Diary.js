@@ -52,6 +52,7 @@ class Diary {
         this.renderDiaryMeals();
 
         localStorage.setItem(this.diaryMeals.length, JSON.stringify(meal));
+        localStorage.setItem('last-id', this.lastCreatedMealId);
         return true;
 
 
@@ -103,6 +104,7 @@ class Diary {
 
     // CRUD: delete
     deleteMeal(mealIndex) {
+        localStorage.removeItem(this.diaryMeals[mealIndex].id);
         this.diaryMeals = this.diaryMeals.filter((meal, index) => index !== mealIndex) // paliekam tuos indexus kurie nesutampa, o kurie sutampa istrinam
         this.renderDiaryMeals();
 
