@@ -45,18 +45,19 @@ buttonCancelAdd.addEventListener('click', e => {
 
 buttonAdd.addEventListener('click', e => {
     e.preventDefault();
-    const meal = {
-        name: newName.value,
-        carb: newCarb.value,
-        protein: newProtein.value,
-        fat: newFat.value,
-        kcal: newkcal.value,
-    }
-    diary.addMeal(meal);
+    // const meal = {
+    //     id: ++diary.lastCreatedMealId,
+    //     name: newName.value,
+    //     carb: newCarb.value,
+    //     protein: newProtein.value,
+    //     fat: newFat.value,
+    //     kcal: newkcal.value,
+    // }
+    diary.addMeal(newName.value, newCarb.value, newProtein.value, newFat.value, newkcal.value, );
     diary.clearAddForm();
     lightbox.classList.remove('show');
 
-    console.log('add suveike');
+    // console.log('add suveike');
 })
 
 addEventListener('keyup', ({ key }) => { //spaudzian escape visada uzdarys forma
@@ -66,6 +67,3 @@ addEventListener('keyup', ({ key }) => { //spaudzian escape visada uzdarys forma
     }
 
 });
-
-
-console.log(diary);

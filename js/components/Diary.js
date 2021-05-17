@@ -6,6 +6,7 @@ class Diary {
         this.DOM = null;
 
         this.diaryMeals = []; //tuscias meals arejus
+        this.lastCreatedMealId = 0;
 
         this.editForm = null;
     }
@@ -15,6 +16,8 @@ class Diary {
             return false;
         }
         this.updateStyle();
+        this.getInfoFromLocalStorage();
+        this.renderDiaryMeals();
 
 
     }
@@ -35,10 +38,21 @@ class Diary {
     }
 
     // CRUD: create 
-    addMeal(meal) {
+    addMeal(name, carb, protein, fat, kcal) {
+        const meal = {
+            id: ++this.lastCreatedMealId,
+            name: name,
+            carb: +carb,
+            protein: +protein,
+            fat: +fat,
+            kcal: +kcal,
+        }
 
         this.diaryMeals.push(meal);
         this.renderDiaryMeals();
+
+        localStorage.setItem(meal.id, JSON.stringify(meal));
+        localStorage.setItem('last-id', this.lastCreatedMealId);
         return true;
 
 
@@ -70,6 +84,10 @@ class Diary {
         }
         this.DOM.innerHTML = HTML;
         this.addEvents();
+        document.getElementById("total-carbs").innerHTML = this.totalCarbs();
+        document.getElementById("total-protein").innerHTML = this.totalProtein();
+        document.getElementById("total-fat").innerHTML = this.totalFat();
+        document.getElementById("total-kcal").innerHTML = this.totalKcal();
 
     }
 
@@ -82,12 +100,17 @@ class Diary {
         this.diaryMeals[mealIndex].fat = newFat;
         this.diaryMeals[mealIndex].kcal = newkcal;
         this.renderDiaryMeals();
-        console.log('New Text:', newText);
+        // console.log('New Text:', newText);
+
+        const meal = this.diaryMeals[mealIndex];
+
+        localStorage.setItem(meal.id, JSON.stringify(meal));
 
     }
 
     // CRUD: delete
     deleteMeal(mealIndex) {
+        localStorage.removeItem(this.diaryMeals[mealIndex].id);
         this.diaryMeals = this.diaryMeals.filter((meal, index) => index !== mealIndex) // paliekam tuos indexus kurie nesutampa, o kurie sutampa istrinam
         this.renderDiaryMeals();
 
@@ -112,57 +135,45 @@ class Diary {
 
             editBtn.addEventListener('click', () => {
                 this.editForm.show(i);
-                console.log('bla bla');
+                // console.log('bla bla');
             });
             removeBtn.addEventListener('click', () => {
                 this.deleteMeal(i);
-                console.log('bla bla');
+                // console.log('bla bla');
             });
         }
     };
-    // initDiaryMealEditing(mealIndex) {
-    //     const meal = this.diaryMeals[mealIndex];
 
-    //     console.log('inicijuojamas TODO redagavimas');
+    getInfoFromLocalStorage() {
 
-    //     const lightbox = document.querySelector('.lightbox');
-    //     const updateName = document.getElementById('edit-name');
-    //     const updateCarb = document.getElementById('edit-carb');
-    //     const updateProtein = document.getElementById('edit-protein');
-    //     const updateFat = document.getElementById('edit-fat');
-    //     const updateKcal = document.getElementById('edit-kcal');
-    //     const buttonCancelUpdate = document.getElementById('button-cancel-update');
-    //     const buttonUpdate = document.getElementById('button-update');
+        const keys = Object.keys(localStorage).sort();
 
-    //     lightbox.dataset.form = 'update'; // nurodo kuria butent forma parodyti.
+        for (let key of keys) {
+            const meal = localStorage.getItem(key);
+            const obj = JSON.parse(meal);
+            if (key == 'last-id') {
+                this.lastCreatedMealId = obj
+            } else {
+                this.diaryMeals.push(obj);
+            }
 
-    //     updateName.value = meal.name;
-    //     updateCarb.value = meal.carb;
-    //     updateProtein.value = meal.protein;
-    //     updateFat.value = meal.fat;
-    //     updateKcal.value = meal.kcal;
+        }
 
-    //     lightbox.classList.add('show');
+        console.log(this.diaryMeals);
+    }
 
-    //     buttonCancelUpdate.addEventListener('click', e => {
-    //         e.preventDefault();
-    //         lightbox.classList.remove('show');
-    //     })
-
-    //     buttonUpdate.addEventListener('click', e => {
-    //         e.preventDefault();
-
-    //         this.diaryMeals[mealIndex].name = updateName.value;
-    //         this.diaryMeals[mealIndex].carb = updateCarb.value;
-    //         this.diaryMeals[mealIndex].protein = updateProtein.value;
-    //         this.diaryMeals[mealIndex].fat = updateFat.value;
-    //         this.diaryMeals[mealIndex].kcal = updateKcal.value;
-
-    //         lightbox.classList.remove('show');
-    //         this.renderDiaryMeals();
-    //     })
-
-    // }
+    totalCarbs() {
+        return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.carb, 0);
+    };
+    totalProtein() {
+        return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.protein, 0);
+    };
+    totalFat() {
+        return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.fat, 0);
+    };
+    totalKcal() {
+        return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.kcal, 0);
+    };
 
 }
 
