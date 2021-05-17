@@ -42,10 +42,10 @@ class Diary {
         const meal = {
             id: ++this.lastCreatedMealId,
             name: name,
-            carb: carb,
-            protein: protein,
-            fat: fat,
-            kcal: kcal,
+            carb: +carb,
+            protein: +protein,
+            fat: +fat,
+            kcal: +kcal,
         }
 
         this.diaryMeals.push(meal);
@@ -84,6 +84,7 @@ class Diary {
         }
         this.DOM.innerHTML = HTML;
         this.addEvents();
+        document.getElementById("total-carbs").innerHTML = this.totalCarbs();
 
     }
 
@@ -156,6 +157,10 @@ class Diary {
         }
 
         console.log(this.diaryMeals);
+    }
+
+    totalCarbs() {
+        return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.carb, 0);
     }
 
 }
