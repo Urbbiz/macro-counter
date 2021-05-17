@@ -85,6 +85,7 @@ class Diary {
         this.DOM.innerHTML = HTML;
         this.addEvents();
         document.getElementById("total-carbs").innerHTML = this.totalCarbs();
+        document.getElementById("total-protein").innerHTML = this.totalProtein();
 
     }
 
@@ -161,7 +162,10 @@ class Diary {
 
     totalCarbs() {
         return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.carb, 0);
-    }
+    };
+    totalProtein() {
+        return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.protein, 0);
+    };
 
 }
 
