@@ -87,6 +87,7 @@ class Diary {
         document.getElementById("total-carbs").innerHTML = this.totalCarbs();
         document.getElementById("total-protein").innerHTML = this.totalProtein();
         document.getElementById("total-fat").innerHTML = this.totalFat();
+        document.getElementById("total-kcal").innerHTML = this.totalKcal();
 
     }
 
@@ -169,6 +170,9 @@ class Diary {
     };
     totalFat() {
         return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.fat, 0);
+    };
+    totalKcal() {
+        return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.kcal, 0);
     };
 
 }
