@@ -3,6 +3,11 @@ import { Diary } from './components/Diary.js';
 import { EditForm } from './components/EditForm.js';
 
 
+//Hamburger
+
+const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
 // run
 
 const addNewButton = document.querySelector('.add-new');
@@ -15,6 +20,8 @@ const newFat = document.getElementById('new-fat');
 const newkcal = document.getElementById('new-kcal');
 const buttonCancelAdd = document.getElementById('button-cancel-add');
 const buttonAdd = document.getElementById('button-add');
+
+
 
 
 // Init objects
@@ -66,4 +73,10 @@ addEventListener('keyup', ({ key }) => { //spaudzian escape visada uzdarys forma
         lightbox.classList.remove('show');
     }
 
+});
+
+//hamburger events 
+
+toggleButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
 });
