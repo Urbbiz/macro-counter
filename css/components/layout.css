@@ -235,10 +235,10 @@ body {
 
 @media (max-width: 680px) {
     .container {
-        grid-template-columns: 20px 1fr 20px;
+        grid-template-columns: 5px 1fr 5px;
     }
     .container>.row {
-        gap: 10px;
+        gap: 5px;
     }
     .container>.row>.col-xs-1 {
         grid-column: auto / span 1;
@@ -274,6 +274,51 @@ body {
         grid-column: auto / span 11;
     }
     .container>.row>.col-xs-12 {
+        grid-column: auto / span 12;
+    }
+}
+
+@media (max-width: 380px) {
+    .container {
+        grid-template-columns: 5px 1fr 5px;
+    }
+    .container>.row {
+        gap: 5px;
+    }
+    .container>.row>.col-xxs-1 {
+        grid-column: auto / span 1;
+    }
+    .container>.row>.col-xxs-2 {
+        grid-column: auto / span 2;
+    }
+    .container>.row>.col-xxs-3 {
+        grid-column: auto / span 3;
+    }
+    .container>.row>.col-xxs-4 {
+        grid-column: auto / span 4;
+    }
+    .container>.row>.col-xxs-5 {
+        grid-column: auto / span 5;
+    }
+    .container>.row>.col-xxs-6 {
+        grid-column: auto / span 6;
+    }
+    .container>.row>.col-xxs-7 {
+        grid-column: auto / span 7;
+    }
+    .container>.row>.col-xxs-8 {
+        grid-column: auto / span 8;
+    }
+    .container>.row>.col-xxs-9 {
+        grid-column: auto / span 9;
+    }
+    .container>.row>.col-xxs-10 {
+        grid-column: auto / span 10;
+    }
+    .container>.row>.col-xxs-11 {
+        grid-column: auto / span 11;
+    }
+    .container>.row>.col-xxs-12 {
         grid-column: auto / span 12;
     }
 }

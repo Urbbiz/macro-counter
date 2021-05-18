@@ -3,8 +3,10 @@
 @import './components/header.css';
 @import './components/button.css';
 @import './components/plus.css';
+@import './components/footer.css';
 body {
     background-color: #f9f9f9;
+    height: 100vh;
 }
 
 .right {
