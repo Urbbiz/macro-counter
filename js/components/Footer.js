@@ -4,9 +4,9 @@ class Footer {
 
     yearChanger() {
         const year = new Date().getFullYear();
-        const date = `<p>${year}: &copy;</p>
-<a href="https://www.linkedin.com/in/andrius-urbonas-45b1a433/" target="blank">
-    <img class="img" src="./img/footer/logo.png" alt="logo">`;
+        const date = `
+<a href="https://www.linkedin.com/in/andrius-urbonas-45b1a433/" target="blank"><span>${year} &copy;</span>
+    <img class="img" src="./img/footer/logo.png" alt="logo"></a>`;
         document.getElementById('date-js').innerHTML = date;
     }
 

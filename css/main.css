@@ -1,10 +1,19 @@
 @import './components/layout.css';
 @import './components/reset.css';
+@import './components/variables.css';
 @import './components/header.css';
+@import './components/total-macro.css';
 @import './components/button.css';
 @import './components/plus.css';
+@import './components/footer.css';
+
+/* google fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 body {
     background-color: #f9f9f9;
+    height: 100vh;
 }
 
 .right {

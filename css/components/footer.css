@@ -1,0 +1,35 @@
+footer {
+    /* display: inline-block; */
+    background-color: #eee;
+    bottom: 0px;
+}
+
+.date {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.date a {
+    text-decoration: none;
+    color: var(--light-text-color);
+    font-size: 17px;
+    font-family: var(--header-font);
+}
+
+.visitors {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    color: var(--light-text-color);
+    font-size: 17px;
+    font-family: var(--header-font);
+}
+
+@media (max-width: 380px) {
+    .visitors {
+        text-align: center;
+    }
+    .date a {
+        text-align: center;
+    }
+}
