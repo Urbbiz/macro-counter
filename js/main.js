@@ -43,6 +43,7 @@ diary.editForm = editForm;
 // Init footer
 const footer = new Footer;
 footer.yearChanger();
+footer.visitorsCounter();
 
 
 

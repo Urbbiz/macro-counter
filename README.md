@@ -18,7 +18,7 @@ Design: random
 - responsive design
 - repetitive content is generated/rendered;
 - form validations
-- AJAX (data sending)
+- API
 
 ## Authors
 [Andrius](https://github.com/urbbiz)
