@@ -1,6 +1,9 @@
 // All imports
+import { Footer } from './components/Footer.js';
 import { Diary } from './components/Diary.js';
 import { EditForm } from './components/EditForm.js';
+
+
 
 
 //Hamburger
@@ -8,7 +11,6 @@ import { EditForm } from './components/EditForm.js';
 const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 
-// run
 
 const addNewButton = document.querySelector('.add-new');
 const lightbox = document.querySelector('.lightbox');
@@ -29,7 +31,7 @@ const diary = new Diary({
     selector: 'main'
 });
 diary.init();
-
+//   Init edit form
 const editForm = new EditForm({
     selector: 'form.update',
     diaryObject: diary
@@ -37,6 +39,12 @@ const editForm = new EditForm({
 editForm.init();
 
 diary.editForm = editForm;
+
+// Init footer
+const footer = new Footer;
+footer.yearChanger();
+footer.visitorsCounter();
+
 
 
 // add events
@@ -80,3 +88,14 @@ addEventListener('keyup', ({ key }) => { //spaudzian escape visada uzdarys forma
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 });
+
+
+
+//Footer Year changer
+// const year = new Date().getFullYear();
+// const date = `<p>${year}: &copy;</p>
+// <a href="https://www.linkedin.com/in/andrius-urbonas-45b1a433/" target="blank">
+//     <img class="img" src="./img/footer/logo.png" alt="logo">`;
+// document.getElementById('date-js').innerHTML = date;
+
+//Footer visitors counter
