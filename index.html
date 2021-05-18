@@ -9,111 +9,117 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
-<!-- header -->
-
-<header>
-    <nav class="navbar">
-        <div class="title">Macro Counter</div>
-        <a href="#" class="toggle-button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-        <div class="navbar-links">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Macro</a></li>
-                <li><a href="#">BMI</a></li>
-                <li><a href="#">Quiz</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<!-- total macro  -->
-<section class="container">
-    <div class="row" id="total-macro">
-        <div class="col-12">Total</div>
-        <div class="col-3">carbs <span id="total-carbs"></span> g. </div>
-        <div class="col-3">protein <span id="total-protein"></span> g. </div>
-        <div class="col-3">fat <span id="total-fat"></span> g. </div>
-        <div class="col-3">kcal <span id="total-kcal"></span> g. </div>
-    </div>
-</section>
-<!-- meal render -->
-
-<main> </main>
-
-
-<!-- pliusas -->
-<div class="add-new">+</div>
-
-<!-- add form -->
-<div class="lightbox" data-form="add">
-    <div class="background"></div>
-    <div class="content">
-        <form class="add">
-            <h2 class="title">Add Meal</h2>
-            <div class="name">
-                <div><label for="new-name">Name:</label></div>
-                <input type="text" id="new-name" />
-            </div>
-            <div class="name">
-                <div><label for="new-carb">Carb:</label></div>
-                <input type="text" id="new-carb" />
-            </div>
-            <div class="name">
-                <div><label for="new-protein">Protein:</label></div>
-                <input type="text" id="new-protein" />
-            </div>
-            <div class="name">
-                <div><label for="new-fat">Fat:</label></div>
-                <input type="text" id="new-fat" />
-            </div>
-            <div class="name">
-                <div><label for="new-kcal">Kcal:</label></div>
-                <input type="text" id="new-kcal" />
-            </div class="actions">
-            <button class="btn update right" id="button-add" type="button">Add Meal</button>
-            <button class="btn cancel" id="button-cancel-add" type="button">Cancel</button>
-        </form>
-
-        <!-- edit form -->
-        <form class="update" data-form="update">
-            <h2 class="title">Edit Meal</h2>
-            <div class="name">
-                <div><label for="edit-name">Name:</label></div>
-                <input type="text" id="edit-name" />
-            </div>
-            <div class="name">
-                <div><label for="edit-carb">Carb:</label></div>
-                <input type="text" id="edit-carb" />
-            </div>
-            <div class="name">
-                <div><label for="edit-protein">Protein:</label></div>
-                <input type="text" id="edit-protein" />
-            </div>
-            <div class="name">
-                <div><label for="edit-fat">Fat:</label></div>
-                <input type="text" id="edit-fat" />
-            </div>
-            <div class="name">
-                <div><label for="edit-kcal">Kcal:</label></div>
-                <input type="text" id="edit-kcal" />
-            </div>
-            <button class="btn cancel" id="button-cancel-update" type="button">Cancel</button>
-            <button class="btn update right" id="button-update" type="button">Update Meal</button>
-        </form>
-    </div>
-</div>
-<!-- footer -->
-
-<footer>
-
-</footer>
-
 <body>
 
+
+    <!-- header -->
+
+    <header>
+        <nav class="navbar">
+            <div class="title">Macro Counter</div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Macro</a></li>
+                    <li><a href="#">BMI</a></li>
+                    <li><a href="#">Quiz</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- total macro  -->
+    <section class="container">
+        <div class="row" id="total-macro">
+            <div class="col-12">Total</div>
+            <div class="col-3">carbs <span id="total-carbs"></span> g. </div>
+            <div class="col-3">protein <span id="total-protein"></span> g. </div>
+            <div class="col-3">fat <span id="total-fat"></span> g. </div>
+            <div class="col-3">kcal <span id="total-kcal"></span> g. </div>
+        </div>
+    </section>
+    <!-- meal render -->
+
+    <main> </main>
+
+
+    <!-- pliusas -->
+    <div class="add-new">+</div>
+
+    <!-- add form -->
+    <div class="lightbox" data-form="add">
+        <div class="background"></div>
+        <div class="content">
+            <form class="add">
+                <h2 class="title">Add Meal</h2>
+                <div class="name">
+                    <div><label for="new-name">Name:</label></div>
+                    <input type="text" id="new-name" />
+                </div>
+                <div class="name">
+                    <div><label for="new-carb">Carb:</label></div>
+                    <input type="text" id="new-carb" />
+                </div>
+                <div class="name">
+                    <div><label for="new-protein">Protein:</label></div>
+                    <input type="text" id="new-protein" />
+                </div>
+                <div class="name">
+                    <div><label for="new-fat">Fat:</label></div>
+                    <input type="text" id="new-fat" />
+                </div>
+                <div class="name">
+                    <div><label for="new-kcal">Kcal:</label></div>
+                    <input type="text" id="new-kcal" />
+                </div class="actions">
+                <button class="btn update right" id="button-add" type="button">Add Meal</button>
+                <button class="btn cancel" id="button-cancel-add" type="button">Cancel</button>
+            </form>
+
+            <!-- edit form -->
+            <form class="update" data-form="update">
+                <h2 class="title">Edit Meal</h2>
+                <div class="name">
+                    <div><label for="edit-name">Name:</label></div>
+                    <input type="text" id="edit-name" />
+                </div>
+                <div class="name">
+                    <div><label for="edit-carb">Carb:</label></div>
+                    <input type="text" id="edit-carb" />
+                </div>
+                <div class="name">
+                    <div><label for="edit-protein">Protein:</label></div>
+                    <input type="text" id="edit-protein" />
+                </div>
+                <div class="name">
+                    <div><label for="edit-fat">Fat:</label></div>
+                    <input type="text" id="edit-fat" />
+                </div>
+                <div class="name">
+                    <div><label for="edit-kcal">Kcal:</label></div>
+                    <input type="text" id="edit-kcal" />
+                </div>
+                <button class="btn cancel" id="button-cancel-update" type="button">Cancel</button>
+                <button class="btn update right" id="button-update" type="button">Update Meal</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <footer>
+        <div id="date-js">
+            <!-- <p>designed by: &copy;</p>
+            <a href="https://www.linkedin.com/in/andrius-urbonas-45b1a433/" target="blank">
+                <img class="img" src="./img/footer/logo.png" alt="logo"> -->
+
+        </div>
+    </footer>
 
 
     <script src="./js/main.js" type="module"></script>
