@@ -5,42 +5,27 @@ footer {
 }
 
 .date {
-    /* display: inline-block; */
     margin-top: 1rem;
     margin-bottom: 1rem;
-    /* background-color: hotpink; */
-    /* text-align: center; */
 }
 
 .date a {
     text-decoration: none;
-    color: gray;
+    color: var(--light-text-color);
     font-size: 17px;
+    font-family: var(--header-font);
 }
-
-
-/* .date img {
-    display: inline-block;
-    background-color: khaki;
-} */
 
 .visitors {
     margin-top: 1rem;
     margin-bottom: 1rem;
     text-align: right;
-    /* background-color: khaki; */
-    color: gray;
+    color: var(--light-text-color);
     font-size: 17px;
+    font-family: var(--header-font);
 }
 
 @media (max-width: 380px) {
-    .date {
-        /* display: inline-block; */
-        /* margin-top: .5rem;
-        margin-bottom: .5rem; */
-        /* background-color: hotpink; */
-        /* text-align: center; */
-    }
     .visitors {
         text-align: center;
     }

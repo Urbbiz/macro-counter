@@ -1,5 +1,6 @@
 @import './components/layout.css';
 @import './components/reset.css';
+@import './components/variables.css';
 @import './components/header.css';
 @import './components/button.css';
 @import './components/plus.css';
