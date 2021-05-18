@@ -95,10 +95,10 @@ class Diary {
     // CRUD: update
     updateMeal(mealIndex, newText, newCarb, newProtein, newFat, newkcal) {
         this.diaryMeals[mealIndex].name = newText;
-        this.diaryMeals[mealIndex].carb = newCarb;
-        this.diaryMeals[mealIndex].protein = newProtein;
-        this.diaryMeals[mealIndex].fat = newFat;
-        this.diaryMeals[mealIndex].kcal = newkcal;
+        this.diaryMeals[mealIndex].carb = +newCarb;
+        this.diaryMeals[mealIndex].protein = +newProtein;
+        this.diaryMeals[mealIndex].fat = +newFat;
+        this.diaryMeals[mealIndex].kcal = +newkcal;
         this.renderDiaryMeals();
         // console.log('New Text:', newText);
 
