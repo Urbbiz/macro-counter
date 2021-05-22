@@ -11,3 +11,13 @@
     align-items: center;
     /* height: 80px; */
 }
+
+@media(max-width: 410px) {
+    .about-macro img {
+        /* max-width: 400px; */
+        max-width: 150px;
+        /* min-width: 100px; */
+        /* align-items: center; */
+        /* height: 80px; */
+    }
+}
