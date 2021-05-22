@@ -4,3 +4,10 @@
     font-size: 24px;
     color: var(--main-text-color);
 }
+
+@media(max-width: 480px) {
+    .total-macro {
+        font-size: 15px;
+        font-weight: 550;
+    }
+}

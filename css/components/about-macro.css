@@ -1,0 +1,41 @@
+.container .about-macro {
+    display: inline-block;
+    /* background-color: turquoise; */
+    text-align: center;
+}
+
+.about-macro img {
+    /* max-width: 400px; */
+    max-width: 350px;
+    min-width: 100px;
+    align-items: center;
+    /* height: 80px; */
+}
+
+.block {
+    padding-bottom: 10px;
+    padding-top: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 5px #0003;
+    transition: 0.5s;
+}
+
+.block:hover {
+    transform: scale(1.15);
+}
+
+.block img {
+    width: 80px;
+    height: 80px;
+}
+
+@media(max-width: 410px) {
+    .about-macro img {
+        /* max-width: 400px; */
+        max-width: 150px;
+        /* min-width: 100px; */
+        /* align-items: center; */
+        /* height: 80px; */
+    }
+}
