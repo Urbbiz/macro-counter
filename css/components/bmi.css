@@ -90,3 +90,20 @@
     font-weight: bold;
     font-family: var(--font-family);
 }
+
+.calculate .height input {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 3vmin;
+    background: #333;
+    border-radius: 50vmin;
+    overflow: hidden;
+}
+
+.calculate .height input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 3vmin;
+    width: 3vmin;
+    background: linear-gradient(45deg, #ff7400, #f4511e);
+    box-shadow: -50vmin 0 0 50vmin #f4511e;
+}
