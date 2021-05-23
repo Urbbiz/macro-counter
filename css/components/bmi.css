@@ -6,3 +6,38 @@
     align-items: center;
     justify-content: start;
 }
+
+.calculate .title-bmi {
+    font-size: 6.5vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    background: -webkit-linear-gradient(45deg, #ff7400, #f4511e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calculate .gender {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+}
+
+.calculate .gender div {
+    height: 32vmin;
+    width: 32vmin;
+    background: #232323;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    font-size: 20vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    text-align: center;
+    line-height: 32vmin;
+}
+
+.calculate .gender div span {
+    background: -webkit-linear-gradient(45deg, #ff7400, #f4511e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
