@@ -53,3 +53,40 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.calculate .height {
+    margin-top: 4vmin;
+    width: 75%;
+    height: 32vmin;
+    background: #232323;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-size: 5vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    color: #555;
+}
+
+.calculate .height .val {
+    color: #fff;
+    font-size: 5vmin;
+    margin: 0;
+    margin-top: -2vmin;
+}
+
+.calculate .height .val i {
+    text-align: center;
+    line-height: 6vmin;
+    font-size: 5vmin;
+    font-weight: bold;
+    padding: 3vmin;
+}
+
+.calculate .height .val span {
+    font-size: 6vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+}
