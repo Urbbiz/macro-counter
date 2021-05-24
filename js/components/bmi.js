@@ -58,3 +58,24 @@ document.querySelector('.calculate .weight .val i.sub-bmi').onclick = function()
     document.querySelector('.calculate .weight .val span').innerText = weight;
     document.querySelector('.calculate .weight input').value = weight; //mazeja orange juosta
 }
+
+// biznio logika
+
+document.querySelector('.calculate .calc').onclick = function() {
+    let bmi = (weight / Math.pow(height / 100, 2)).toFixed(2);
+    height = 50;
+    weight = 10;
+
+    document.querySelector('.calculate .weight input').value = weight;
+    document.querySelector('.calculate .weight .val span').innerText = weight;
+    document.querySelector('.calculate .height input').value = height;
+    document.querySelector('.calculate .height .val span').innerText = height;
+
+    document.querySelector('.result .bmi .val').innerText = bmi;
+
+    document.querySelector('.calculate').style.display = 'none';
+    document.querySelector('.result').style.display = 'flex';
+
+
+
+}
