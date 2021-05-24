@@ -73,9 +73,36 @@ document.querySelector('.calculate .calc').onclick = function() {
 
     document.querySelector('.result .bmi .val').innerText = bmi;
 
+    if (bmi < 18.5) { // keicia spalva ir pakeicia texta jeigu bmi > 18.5
+        document.querySelector('.result .text-bmi').innerText = 'YOU ARE UNDERWEIGHT!';
+        document.querySelector('.result .bmi .val').style.color = '#3f51b5';
+        document.querySelector('.result .text-bmi').style.color = '#3f51b5';
+    } else if (bmi >= 18.5 && bmi < 25) { // keicia spalva ir pakeicia texta jeigu svoris normalus
+        document.querySelector('.result .text-bmi').innerText = 'YOU HAVE HEALTHY WEIGHT!';
+        document.querySelector('.result .bmi .val').style.color = '#0f4';
+        document.querySelector('.result .text-bmi').style.color = '#0f4';
+    } else if (bmi >= 25 && bmi < 30) { // keicia spalva ir pakeicia texta jeigu bmi >= 25  < 30
+        document.querySelector('.result .text-bmi').innerText = 'YOU ARE OVERWEIGHT!';
+        document.querySelector('.result .bmi .val').style.color = '#ffc107';
+        document.querySelector('.result .text-bmi').style.color = '#ffc107';
+    } else if (bmi >= 30) { // keicia spalva ir pakeicia texta jeigu bmi >= 30  
+        document.querySelector('.result .text-bmi').innerText = 'YOU ARE OBESE!';
+        document.querySelector('.result .bmi .val').style.color = '#f00';
+        document.querySelector('.result .text-bmi').style.color = '#f00';
+    }
+
+
+
+
+
+
     document.querySelector('.calculate').style.display = 'none';
     document.querySelector('.result').style.display = 'flex';
 
+}
 
-
+// RECALC BUTTON
+document.querySelector('.result .recalc').onclick = function() {
+    document.querySelector('.calculate').style.display = 'flex';
+    document.querySelector('.result').style.display = 'none';
 }
