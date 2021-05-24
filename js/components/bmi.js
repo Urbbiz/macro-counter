@@ -46,7 +46,7 @@ document.querySelector('.calculate .weight input').onchange = function() {
 // spaudziant ant + dideja skaicius
 document.querySelector('.calculate .weight .val i.add-bmi').onclick = function() {
     weight += 1;
-    weight = (weight > 220) ? 220 : weight; // apsauga nuo per didesnio negu 220 skaiciaus
+    weight = (weight > 180) ? 180 : weight; // apsauga nuo per didesnio negu 220 skaiciaus
     document.querySelector('.calculate .weight .val span').innerText = weight;
     document.querySelector('.calculate .weight input').value = weight; //dideja orange juosta
 }
