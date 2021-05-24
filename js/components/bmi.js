@@ -1,5 +1,6 @@
 let gender = 'male';
 height = 50;
+weight = 10;
 
 document.querySelector('.calculate .gender .male').onclick = function() {
     gender = 'male';
@@ -14,7 +15,7 @@ document.querySelector('.calculate .gender .female').onclick = function() {
         document.querySelector('.calculate .gender .male').className = 'male';
 
     }
-    // keicia skaicius keiciant input reiksme.
+    //  ****HEIGHT keicia skaicius keiciant input reiksme.
 document.querySelector('.calculate .height input').onchange = function() {
     height = parseInt(this.value);
     document.querySelector('.calculate .height .val span').innerText = height;
@@ -34,4 +35,26 @@ document.querySelector('.calculate .height .val i.sub-bmi').onclick = function()
     height = (height < 50) ? 50 : height; // apsauga nuo per mazesnio skaiciaus negu 50 skaiciaus
     document.querySelector('.calculate .height .val span').innerText = height;
     document.querySelector('.calculate .height input').value = height; //mazeja orange juosta
+}
+
+//  ******WEIGHT keicia skaicius keiciant input reiksme.
+document.querySelector('.calculate .weight input').onchange = function() {
+    weight = parseInt(this.value);
+    document.querySelector('.calculate .weight .val span').innerText = weight;
+}
+
+// spaudziant ant + dideja skaicius
+document.querySelector('.calculate .weight .val i.add-bmi').onclick = function() {
+    weight += 1;
+    weight = (weight > 220) ? 220 : weight; // apsauga nuo per didesnio negu 220 skaiciaus
+    document.querySelector('.calculate .weight .val span').innerText = weight;
+    document.querySelector('.calculate .weight input').value = weight; //dideja orange juosta
+}
+
+// spaudziant ant i mazeja skaicius skaicius
+document.querySelector('.calculate .weight .val i.sub-bmi').onclick = function() {
+    weight -= 1;
+    weight = (weight < 10) ? 10 : weight; // apsauga nuo per mazesnio skaiciaus negu 50 skaiciaus
+    document.querySelector('.calculate .weight .val span').innerText = weight;
+    document.querySelector('.calculate .weight input').value = weight; //mazeja orange juosta
 }
