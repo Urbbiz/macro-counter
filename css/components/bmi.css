@@ -1,0 +1,180 @@
+.calculate,
+.result {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.result {
+    display: none;
+}
+
+.calculate .title-bmi {
+    font-size: 6.5vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    background: -webkit-linear-gradient(45deg, #ff7400, #f4511e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calculate .gender {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+}
+
+.calculate .gender div {
+    height: 32vmin;
+    width: 32vmin;
+    background: #e2dede;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    font-size: 20vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    text-align: center;
+    line-height: 32vmin;
+}
+
+.calculate .gender div span {
+    background: -webkit-linear-gradient(45deg, #ff7400, #f4511e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calculate .gender .male.active span {
+    background: -webkit-linear-gradient(45deg, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calculate .gender .female.active span {
+    background: -webkit-linear-gradient(45deg, #f953c6, #b91d73);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calculate .height,
+.calculate .weight {
+    margin-top: 4vmin;
+    width: 75%;
+    height: 32vmin;
+    background: #e2dede;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-size: 5vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    color: #555;
+}
+
+.calculate .height .val,
+.calculate .weight .val {
+    color: gray;
+    font-size: 5vmin;
+    margin: 0;
+    margin-top: -2vmin;
+}
+
+.calculate .height .val i,
+.calculate .weight .val i {
+    text-align: center;
+    line-height: 6vmin;
+    font-size: 5vmin;
+    font-weight: bold;
+    padding: 3vmin;
+}
+
+.calculate .height .val span,
+.calculate .weight .val span {
+    font-size: 6vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+}
+
+.calculate .height input,
+.calculate .weight input {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 3vmin;
+    background: #333;
+    border-radius: 50vmin;
+    overflow: hidden;
+}
+
+.calculate .height input::-webkit-slider-thumb,
+.calculate .weight input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 3vmin;
+    width: 3vmin;
+    background: linear-gradient(45deg, #ff7400, #f4511e);
+    box-shadow: -50vmin 0 0 50vmin #f4511e;
+}
+
+.calculate .calc,
+.result .recalc {
+    height: 14vmin;
+    width: 75%;
+    line-height: 14vmin;
+    margin-top: 6vmin;
+    color: gray;
+    font-size: 5vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    background: #e2dede;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    text-align: center;
+}
+
+.calculate .calc:hover,
+.result .recalc:hover {
+    color: #f4511e;
+}
+
+.result .recalc {
+    margin-top: 20vmin;
+}
+
+.result .bmi {
+    height: 40vmin;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #e2dede;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    margin-top: 5vmin;
+}
+
+.result .bmi .title-bmi {
+    color: #555;
+    font-size: 5vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    font-size: 6.5vmin;
+}
+
+.result .bmi .val {
+    font-size: 7vmin;
+    font-weight: bold;
+    color: gray;
+}
+
+.result .text-bmi {
+    font-size: 5vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    color: #555;
+    width: 75%;
+    text-align: center;
+    margin-top: 20vmin;
+}
