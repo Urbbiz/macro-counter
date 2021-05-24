@@ -54,7 +54,8 @@
     -webkit-text-fill-color: transparent;
 }
 
-.calculate .height {
+.calculate .height,
+.calculate .weight {
     margin-top: 4vmin;
     width: 75%;
     height: 32vmin;
@@ -70,14 +71,16 @@
     color: #555;
 }
 
-.calculate .height .val {
+.calculate .height .val,
+.calculate .weight .val {
     color: #fff;
     font-size: 5vmin;
     margin: 0;
     margin-top: -2vmin;
 }
 
-.calculate .height .val i {
+.calculate .height .val i,
+.calculate .weight .val i {
     text-align: center;
     line-height: 6vmin;
     font-size: 5vmin;
@@ -85,13 +88,15 @@
     padding: 3vmin;
 }
 
-.calculate .height .val span {
+.calculate .height .val span,
+.calculate .weight .val span {
     font-size: 6vmin;
     font-weight: bold;
     font-family: var(--font-family);
 }
 
-.calculate .height input {
+.calculate .height input,
+.calculate .weight input {
     -webkit-appearance: none;
     width: 90%;
     height: 3vmin;
@@ -100,7 +105,8 @@
     overflow: hidden;
 }
 
-.calculate .height input::-webkit-slider-thumb {
+.calculate .height input::-webkit-slider-thumb,
+.calculate .weight input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 3vmin;
     width: 3vmin;
