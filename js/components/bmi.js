@@ -23,5 +23,15 @@ document.querySelector('.calculate .height input').onchange = function() {
 // spaudziant ant + dideja skaicius
 document.querySelector('.calculate .height .val i.add-bmi').onclick = function() {
     height += 1;
+    height = (height > 220) ? 220 : height; // apsauga nuo per didesnio negu 220 skaiciaus
     document.querySelector('.calculate .height .val span').innerText = height;
+    document.querySelector('.calculate .height input').value = height; //dideja orange juosta
+}
+
+// spaudziant ant i mazeja skaicius skaicius
+document.querySelector('.calculate .height .val i.sub-bmi').onclick = function() {
+    height -= 1;
+    height = (height < 50) ? 50 : height; // apsauga nuo per mazesnio skaiciaus negu 50 skaiciaus
+    document.querySelector('.calculate .height .val span').innerText = height;
+    document.querySelector('.calculate .height input').value = height; //mazeja orange juosta
 }
