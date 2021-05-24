@@ -8,7 +8,7 @@
     justify-content: start;
 }
 
-.calculate {
+.result {
     display: none;
 }
 
@@ -139,6 +139,10 @@
     color: #f4511e;
 }
 
+.result .recalc {
+    margin-top: 20vmin;
+}
+
 .result .bmi {
     height: 40vmin;
     width: 75%;
@@ -163,4 +167,14 @@
     font-size: 7vmin;
     font-weight: bold;
     color: #fff;
+}
+
+.result .text-bmi {
+    font-size: 5vmin;
+    font-weight: bold;
+    font-family: var(--font-family);
+    color: #555;
+    width: 75%;
+    text-align: center;
+    margin-top: 20vmin;
 }
