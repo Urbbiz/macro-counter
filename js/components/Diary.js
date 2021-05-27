@@ -1,5 +1,3 @@
-// import { EditForm } from "./EditForm.js";
-
 class Diary {
     constructor(params) {
         this.selector = params.selector;

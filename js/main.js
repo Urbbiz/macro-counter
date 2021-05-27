@@ -2,6 +2,7 @@
 import { Footer } from './components/Footer.js';
 import { Diary } from './components/Diary.js';
 import { EditForm } from './components/EditForm.js';
+import { Bmi } from './components/Bmi.js';;
 
 
 const addNewButton = document.querySelector('.add-new');
@@ -14,6 +15,8 @@ const newFat = document.getElementById('new-fat');
 const newkcal = document.getElementById('new-kcal');
 const buttonCancelAdd = document.getElementById('button-cancel-add');
 const buttonAdd = document.getElementById('button-add');
+
+
 
 
 // Init objects
@@ -34,6 +37,9 @@ diary.editForm = editForm;
 const footer = new Footer;
 footer.yearChanger();
 footer.visitorsCounter();
+// Init footer
+const bmi = new Bmi;
+bmi.bmiCounter();
 
 
 
