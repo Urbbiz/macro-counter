@@ -108,10 +108,12 @@ class Diary {
 
     // CRUD: delete
     deleteMeal(mealIndex) {
-        localStorage.removeItem(this.diaryMeals[mealIndex].id);
-        this.diaryMeals = this.diaryMeals.filter((meal, index) => index !== mealIndex) // paliekam tuos indexus kurie nesutampa, o kurie sutampa istrinam
-        this.renderDiaryMeals();
 
+        if (confirm("Are you sure?")) {
+            localStorage.removeItem(this.diaryMeals[mealIndex].id);
+            this.diaryMeals = this.diaryMeals.filter((meal, index) => index !== mealIndex) // paliekam tuos indexus kurie nesutampa, o kurie sutampa istrinam
+            this.renderDiaryMeals();
+        }
     }
 
 
