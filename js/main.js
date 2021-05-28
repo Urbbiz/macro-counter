@@ -3,6 +3,7 @@ import { Footer } from './components/Footer.js';
 import { Diary } from './components/Diary.js';
 import { EditForm } from './components/EditForm.js';
 import { Bmi } from './components/Bmi.js';;
+import { FormValidations } from './validations/formValidation.js';
 
 
 const addNewButton = document.querySelector('.add-new');
@@ -16,7 +17,7 @@ const newkcal = document.getElementById('new-kcal');
 const buttonCancelAdd = document.getElementById('button-cancel-add');
 const buttonAdd = document.getElementById('button-add');
 
-const form = document.getElementById("form");
+
 
 const errorNewName = document.getElementById("new-name-validation");
 
@@ -41,9 +42,14 @@ diary.editForm = editForm;
 const footer = new Footer;
 footer.yearChanger();
 footer.visitorsCounter();
-// Init footer
+// Init bmi
 const bmi = new Bmi;
 bmi.bmiCounter();
+
+// Init validations
+
+const formValidations = new FormValidations;
+
 
 
 
@@ -61,26 +67,28 @@ buttonCancelAdd.addEventListener('click', e => {
 
 buttonAdd.addEventListener('click', e => {
 
-    let messages = [];
-    if (newName.value === '' || newName === null) {
-        messages.push('Name is required');
-    }
-    if (messages.length > 0) {
+    // let messages = [];
+    // if (newName.value === '' || newName === null) {
+    //     messages.push('Name is required');
+    // }
+    // if (messages.length > 0) {
 
-        e.preventDefault();
-        errorNewName.innerText = messages.join(', ')
+    //     e.preventDefault();
+    //     errorNewName.innerText = messages.join(', ')
 
+    // } 
+
+    if (formValidations.nameValidation() == true) {
+        e.preventDefault()
     } else {
-
 
         diary.addMeal(newName.value, newCarb.value, newProtein.value, newFat.value, newkcal.value, );
         diary.clearAddForm();
         lightbox.classList.remove('show');
         // errorNewName.innerText = '';
-        diary.clearValidations();
 
+        formValidations.clearValidations();
     }
-
 
 })
 
