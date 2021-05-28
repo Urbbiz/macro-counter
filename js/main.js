@@ -4,6 +4,7 @@ import { Diary } from './components/Diary.js';
 import { EditForm } from './components/EditForm.js';
 import { Bmi } from './components/Bmi.js';;
 import { AddFormValidations } from './validations/AddFormValidation.js';
+import { EditFormValidations } from './validations/EditFormValidations.js';
 
 
 const addNewButton = document.querySelector('.add-new');
@@ -19,7 +20,7 @@ const buttonAdd = document.getElementById('button-add');
 
 
 
-const errorNewName = document.getElementById("new-name-validation");
+
 
 
 
@@ -49,6 +50,7 @@ bmi.bmiCounter();
 // Init validations
 
 const addFormValidations = new AddFormValidations;
+const editFormValidations = new EditFormValidations;
 
 
 
@@ -87,7 +89,8 @@ addEventListener('keyup', ({ key }) => { //spaudzian escape visada uzdarys forma
 
     if (key === 'Escape') {
         lightbox.classList.remove('show');
-        formValidations.clearValidations();
+        addFormValidations.clearValidations();
+
     }
 
 });

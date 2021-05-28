@@ -1,7 +1,11 @@
+import { EditFormValidations } from '../validations/EditFormValidations.js'
+
 class EditForm {
     constructor(params) {
         this.selector = params.selector;
         this.diaryObject = params.diaryObject;
+        this.editFormValidations = new EditFormValidations;
+
 
         this.DOM = null;
         this.lightbox = null;
@@ -15,7 +19,10 @@ class EditForm {
 
         this.lastEditedMealIndex = null;
 
+
     }
+
+
 
     init() {
         if (!this.isValidSelector()) {
@@ -66,6 +73,8 @@ class EditForm {
     addEvents() {
         this.buttonCancelUpdate.addEventListener('click', e => {
             e.preventDefault();
+
+            this.editFormValidations.clearEditFormValidations()
             this.hide();
         });
 
