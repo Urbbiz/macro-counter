@@ -125,6 +125,11 @@ class Diary {
         document.getElementById("new-kcal").value = "";
     }
 
+    clearValidations() {
+        const validationElements = document.querySelectorAll("[id$=validation]");
+        validationElements.forEach(messages => messages.innerHTML = "");
+    }
+
     addEvents() {
         const meals = this.DOM.querySelectorAll('.item');
 

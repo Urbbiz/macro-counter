@@ -16,6 +16,10 @@ const newkcal = document.getElementById('new-kcal');
 const buttonCancelAdd = document.getElementById('button-cancel-add');
 const buttonAdd = document.getElementById('button-add');
 
+const form = document.getElementById("form");
+
+const errorNewName = document.getElementById("new-name-validation");
+
 
 
 
@@ -47,6 +51,7 @@ bmi.bmiCounter();
 addNewButton.addEventListener('click', () => {
     lightbox.classList.add('show'); //pridejom show css stiliu ir pasirode add forma
     lightbox.dataset.form = 'add'; // sita eilute dar labiau nurodo kuri forma nuretu buti parodyta.
+
 })
 
 buttonCancelAdd.addEventListener('click', e => {
@@ -55,10 +60,28 @@ buttonCancelAdd.addEventListener('click', e => {
 })
 
 buttonAdd.addEventListener('click', e => {
-    e.preventDefault();
-    diary.addMeal(newName.value, newCarb.value, newProtein.value, newFat.value, newkcal.value, );
-    diary.clearAddForm();
-    lightbox.classList.remove('show');
+
+    let messages = [];
+    if (newName.value === '' || newName === null) {
+        messages.push('Name is required');
+    }
+    if (messages.length > 0) {
+
+        e.preventDefault();
+        errorNewName.innerText = messages.join(', ')
+
+    } else {
+
+
+        diary.addMeal(newName.value, newCarb.value, newProtein.value, newFat.value, newkcal.value, );
+        diary.clearAddForm();
+        lightbox.classList.remove('show');
+        // errorNewName.innerText = '';
+        diary.clearValidations();
+
+    }
+
+
 })
 
 addEventListener('keyup', ({ key }) => { //spaudzian escape visada uzdarys forma
@@ -89,3 +112,9 @@ menuBtn.addEventListener('click', () => {
         navbarLinks.classList.toggle('active')
     }
 });
+
+// ******** ADD VALIDATION FORM *****************
+
+// const newName = document.getElementById('new-name');
+// const newCarb = document.getElementById('new-carb');
+// const buttonAdd = document.getElementById('button-add');
