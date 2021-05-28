@@ -63,29 +63,20 @@ addNewButton.addEventListener('click', () => {
 buttonCancelAdd.addEventListener('click', e => {
     e.preventDefault();
     lightbox.classList.remove('show');
+    formValidations.clearValidations();
 })
 
 buttonAdd.addEventListener('click', e => {
 
-    // let messages = [];
-    // if (newName.value === '' || newName === null) {
-    //     messages.push('Name is required');
-    // }
-    // if (messages.length > 0) {
 
-    //     e.preventDefault();
-    //     errorNewName.innerText = messages.join(', ')
 
-    // } 
-
-    if (formValidations.nameValidation() == true) {
+    if (formValidations.addFormValidation() == true) {
         e.preventDefault()
     } else {
 
         diary.addMeal(newName.value, newCarb.value, newProtein.value, newFat.value, newkcal.value, );
         diary.clearAddForm();
         lightbox.classList.remove('show');
-        // errorNewName.innerText = '';
 
         formValidations.clearValidations();
     }
@@ -96,6 +87,7 @@ addEventListener('keyup', ({ key }) => { //spaudzian escape visada uzdarys forma
 
     if (key === 'Escape') {
         lightbox.classList.remove('show');
+        formValidations.clearValidations();
     }
 
 });
