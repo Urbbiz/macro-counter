@@ -175,6 +175,9 @@ class Diary {
         return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.kcal, 0);
     };
 
+
+
+
 }
 
 export { Diary }
