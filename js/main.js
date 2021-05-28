@@ -3,7 +3,7 @@ import { Footer } from './components/Footer.js';
 import { Diary } from './components/Diary.js';
 import { EditForm } from './components/EditForm.js';
 import { Bmi } from './components/Bmi.js';;
-import { FormValidations } from './validations/formValidation.js';
+import { AddFormValidations } from './validations/AddFormValidation.js';
 
 
 const addNewButton = document.querySelector('.add-new');
@@ -48,7 +48,7 @@ bmi.bmiCounter();
 
 // Init validations
 
-const formValidations = new FormValidations;
+const addFormValidations = new AddFormValidations;
 
 
 
@@ -63,14 +63,14 @@ addNewButton.addEventListener('click', () => {
 buttonCancelAdd.addEventListener('click', e => {
     e.preventDefault();
     lightbox.classList.remove('show');
-    formValidations.clearValidations();
+    addFormValidations.clearValidations();
 })
 
 buttonAdd.addEventListener('click', e => {
 
 
 
-    if (formValidations.addFormValidation() == true) {
+    if (addFormValidations.addFormValidation() == true) {
         e.preventDefault()
     } else {
 
@@ -78,7 +78,7 @@ buttonAdd.addEventListener('click', e => {
         diary.clearAddForm();
         lightbox.classList.remove('show');
 
-        formValidations.clearValidations();
+        addFormValidations.clearValidations();
     }
 
 })
@@ -112,9 +112,3 @@ menuBtn.addEventListener('click', () => {
         navbarLinks.classList.toggle('active')
     }
 });
-
-// ******** ADD VALIDATION FORM *****************
-
-// const newName = document.getElementById('new-name');
-// const newCarb = document.getElementById('new-carb');
-// const buttonAdd = document.getElementById('button-add');

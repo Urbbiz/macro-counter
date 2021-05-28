@@ -1,4 +1,4 @@
-class FormValidations {
+class AddFormValidations {
 
 
 
@@ -60,6 +60,9 @@ class FormValidations {
         if (isNaN(newProtein.value)) {
             messagesProtein.push('Only numeric input');
         }
+        if (newProtein.value < 0) {
+            messagesProtein.push('Please provide positive number');
+        }
 
         // FAT
 
@@ -72,6 +75,10 @@ class FormValidations {
         if (isNaN(newFat.value)) {
             messagesFat.push('Only numeric input');
         }
+        if (newFat.value < 0) {
+            messagesFat.push('Please provide positive number');
+        }
+
 
         // KCAL
 
@@ -87,6 +94,9 @@ class FormValidations {
         if (newKcal.value < 0) {
             messagesKcal.push('Please provide positive number');
         }
+        if (newKcal.value != parseInt(newKcal.value)) {
+            messagesKcal.push('Please provide integer');
+        }
 
 
         if (messagesName.length > 0 || messagesCarb.length > 0 || messagesProtein.length > 0 || messagesFat.length > 0 || messagesKcal.length > 0) {
@@ -100,15 +110,8 @@ class FormValidations {
             return true;
 
         }
-        // if (messagesCarb.length > 0) {
 
-        //     // e.preventDefault();
-        //     errorNewCarb.innerText = messagesCarb.join(', ');
-
-        //     return true;
-
-        // }
     }
 }
 
-export { FormValidations }
+export { AddFormValidations }
