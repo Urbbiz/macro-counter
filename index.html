@@ -106,26 +106,31 @@
     <div class="lightbox" data-form="add">
         <div class="background"></div>
         <div class="content">
-            <form class="add">
+            <form class="add" id="form" action="/" method="GET">
                 <h2 class="title">Add Meal</h2>
                 <div class="name">
                     <div><label for="new-name">Name:</label></div>
+                    <div class="validation" id="new-name-validation"></div>
                     <input type="text" id="new-name" />
                 </div>
                 <div class="name">
                     <div><label for="new-carb">Carb:</label></div>
+                    <div class="validation" id="new-carb-validation"></div>
                     <input type="text" id="new-carb" />
                 </div>
                 <div class="name">
                     <div><label for="new-protein">Protein:</label></div>
+                    <div class="validation" id="new-protein-validation"></div>
                     <input type="text" id="new-protein" />
                 </div>
                 <div class="name">
                     <div><label for="new-fat">Fat:</label></div>
+                    <div class="validation" id="new-fat-validation"></div>
                     <input type="text" id="new-fat" />
                 </div>
                 <div class="name">
                     <div><label for="new-kcal">Kcal:</label></div>
+                    <div class="validation" id="new-kcal-validation"></div>
                     <input type="text" id="new-kcal" />
                 </div class="actions">
                 <button class="btn update right" id="button-add" type="button">Add Meal</button>
@@ -222,7 +227,7 @@
 
 
     <script src="./js/main.js" type="module"></script>
-    <script src="./js/components/bmi.js" type="text/javascript"></script>
+
 </body>
 
 </html>

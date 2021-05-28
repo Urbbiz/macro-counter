@@ -16,7 +16,8 @@
     font-size: 6.5vmin;
     font-weight: bold;
     font-family: var(--font-family);
-    background: -webkit-linear-gradient(45deg, #ff7400, #f4511e);
+    /* background: -webkit-linear-gradient(45deg, #ff7400, #f4511e); */
+    background: #555;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -26,7 +27,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 75%;
+    width: 45%;
 }
 
 .calculate .gender div {
@@ -116,7 +117,7 @@
     height: 3vmin;
     width: 3vmin;
     background: linear-gradient(45deg, #ff7400, #f4511e);
-    box-shadow: -50vmin 0 0 50vmin #f4511e;
+    box-shadow: -100vmin 0 0 100vmin #f4511e;
 }
 
 .calculate .calc,
@@ -177,4 +178,10 @@
     width: 75%;
     text-align: center;
     margin-top: 20vmin;
+}
+
+@media(max-width: 1020px) {
+    .calculate .gender {
+        width: 75%;
+    }
 }

@@ -1,5 +1,3 @@
-// import { EditForm } from "./EditForm.js";
-
 class Diary {
     constructor(params) {
         this.selector = params.selector;
@@ -110,10 +108,12 @@ class Diary {
 
     // CRUD: delete
     deleteMeal(mealIndex) {
-        localStorage.removeItem(this.diaryMeals[mealIndex].id);
-        this.diaryMeals = this.diaryMeals.filter((meal, index) => index !== mealIndex) // paliekam tuos indexus kurie nesutampa, o kurie sutampa istrinam
-        this.renderDiaryMeals();
 
+        if (confirm("Are you sure?")) {
+            localStorage.removeItem(this.diaryMeals[mealIndex].id);
+            this.diaryMeals = this.diaryMeals.filter((meal, index) => index !== mealIndex) // paliekam tuos indexus kurie nesutampa, o kurie sutampa istrinam
+            this.renderDiaryMeals();
+        }
     }
 
 
@@ -124,6 +124,8 @@ class Diary {
         document.getElementById("new-fat").value = "";
         document.getElementById("new-kcal").value = "";
     }
+
+
 
     addEvents() {
         const meals = this.DOM.querySelectorAll('.item');
@@ -174,6 +176,9 @@ class Diary {
     totalKcal() {
         return this.diaryMeals.reduce((currentTotal, CurrentMeal) => currentTotal + CurrentMeal.kcal, 0);
     };
+
+
+
 
 }
 
