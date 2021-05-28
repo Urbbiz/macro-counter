@@ -1,7 +1,12 @@
+import { EditFormValidations } from '../validations/EditFormValidations.js'
+const editFormValidations = new EditFormValidations;
+
 class EditForm {
     constructor(params) {
         this.selector = params.selector;
         this.diaryObject = params.diaryObject;
+
+
 
         this.DOM = null;
         this.lightbox = null;
@@ -15,7 +20,10 @@ class EditForm {
 
         this.lastEditedMealIndex = null;
 
+
     }
+
+
 
     init() {
         if (!this.isValidSelector()) {
@@ -66,14 +74,23 @@ class EditForm {
     addEvents() {
         this.buttonCancelUpdate.addEventListener('click', e => {
             e.preventDefault();
+
+            editFormValidations.clearEditFormValidations()
             this.hide();
         });
 
         this.buttonUpdate.addEventListener('click', e => {
-            e.preventDefault();
-            this.hide();
-            this.diaryObject.updateMeal(this.lastEditedMealIndex, this.updateName.value, this.updateCarb.value, this.updateProtein.value, this.updateFat.value, this.updateKcal.value);
-            // this.diaryObject.updateMeal(this.lastEditedMealIndex, this.updateCarb.value)
+
+            // e.preventDefault();
+
+            if (editFormValidations.editFormValidation() == true) {
+                e.preventDefault()
+            } else {
+                this.hide();
+                editFormValidations.clearEditFormValidations()
+                this.diaryObject.updateMeal(this.lastEditedMealIndex, this.updateName.value, this.updateCarb.value, this.updateProtein.value, this.updateFat.value, this.updateKcal.value);
+                // this.diaryObject.updateMeal(this.lastEditedMealIndex, this.updateCarb.value)
+            }
         })
     }
 }

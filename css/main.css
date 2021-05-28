@@ -96,7 +96,13 @@ form {
 
 form>.title {
     display: inline-block;
+    text-align: center;
     width: 100%;
+}
+
+.validation {
+    color: red;
+    font-size: small;
 }
 
 input {
