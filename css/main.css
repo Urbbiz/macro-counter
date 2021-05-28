@@ -99,6 +99,11 @@ form>.title {
     width: 100%;
 }
 
+.validation {
+    color: red;
+    font-size: small;
+}
+
 input {
     /*texterea*/
     display: inline-block;

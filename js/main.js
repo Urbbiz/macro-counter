@@ -4,7 +4,7 @@ import { Diary } from './components/Diary.js';
 import { EditForm } from './components/EditForm.js';
 import { Bmi } from './components/Bmi.js';;
 import { AddFormValidations } from './validations/AddFormValidation.js';
-import { EditFormValidations } from './validations/EditFormValidations.js';
+
 
 
 const addNewButton = document.querySelector('.add-new');
@@ -50,7 +50,7 @@ bmi.bmiCounter();
 // Init validations
 
 const addFormValidations = new AddFormValidations;
-const editFormValidations = new EditFormValidations;
+
 
 
 
