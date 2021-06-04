@@ -4,6 +4,7 @@ import { Diary } from './components/Diary.js';
 import { EditForm } from './components/EditForm.js';
 import { Bmi } from './components/Bmi.js';;
 import { AddFormValidations } from './validations/AddFormValidation.js';
+import { Question } from './components/Question.js';
 
 
 
@@ -116,31 +117,37 @@ menuBtn.addEventListener('click', () => {
     }
 });
 
-// ************ QUIZ ******************************
+// ********************* QUIZ ***********************************
 
-const quiz = [{
-        q: 'Which macroelement have 9kcal per gram ?',
-        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
-        answer: 0
-    },
-    {
-        q: 'Fruits are full of ?',
-        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
-        answer: 0
-    },
-    {
-        q: 'Chicken breast are rich of ?',
-        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
-        answer: 0
-    },
-    {
-        q: 'Salmon are rich of ?',
-        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
-        answer: 0
-    },
-    {
-        q: 'Wich macroelement is main energy booster ?',
-        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
-        answer: 0
-    },
-]
+// Init QUESTION
+const question = new Question;
+const quiz = question.quiz;
+
+// ********************* QUIZ APP ***********************************
+
+// console.log(quiz);
+
+const questionNumber = document.querySelector(".question-number");
+const questionText = document.querySelector(".question-text");
+const optionContainer = document.querySelector(".option-container");
+
+let questionCounter = 0;
+let currentQuestion;
+let availableQuestions = [];
+
+// push the questions into availableQuestions Array
+function setAvailableQuestions() {
+    const totalQuestion = quiz.length;
+    for (let i = 0; i < totalQuestion; i++) {
+        // console.log(i);
+        availableQuestions.push(quiz[i])
+    }
+
+
+}
+
+window.onload = function() {
+
+    setAvailableQuestions();
+
+}
