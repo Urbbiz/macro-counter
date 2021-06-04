@@ -142,12 +142,21 @@ function setAvailableQuestions() {
         // console.log(i);
         availableQuestions.push(quiz[i])
     }
+}
+
+// set question number and question and options
+function getNewQuestion() {
+    // set question number
+    questionNumber.innerHTML = "Question " + (questionCounter + 1) + " of " + quiz.length;
+
 
 
 }
 
 window.onload = function() {
-
+    // first we will set all questions in availableQuestions Array
     setAvailableQuestions();
+    // second we will call getNewQuestion(); function
+    getNewQuestion();
 
 }
