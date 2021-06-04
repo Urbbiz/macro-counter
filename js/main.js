@@ -134,6 +134,7 @@ const optionContainer = document.querySelector(".option-container");
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
+let availableOptions = [];
 
 // push the questions into availableQuestions Array
 function setAvailableQuestions() {
@@ -159,8 +160,22 @@ function getNewQuestion() {
     // remove the 'questionIndex' from the availableQuestion Array, so that the question does not repeat
     availableQuestions.splice(index1, 1);
 
-    console.log(questionIndex);
-    console.log(availableQuestions);
+    // set options
+    // get lenght of options
+    const optionLen = currentQuestion.options.length
+        // push options into availableOptions Array
+    for (let i = 0; i < optionLen; i++) {
+        availableOptions.push(i)
+    }
+    // create options in html
+
+    for (let i = 0; i < optionLen; i++) {
+        const option = document.createElement("div");
+        option.innerHTML = currentQuestion.options[i];
+        option.id = i;
+        option.className = "option";
+        optionContainer.appendChild(option)
+    }
     questionCounter++
 }
 
