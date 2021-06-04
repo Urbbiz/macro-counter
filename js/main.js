@@ -154,7 +154,13 @@ function getNewQuestion() {
     const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)]
     currentQuestion = questionIndex;
     questionText.innerHTML = currentQuestion.q;
+    // get position of 'questionIndex' from the availableQuestion Array;
+    const index1 = availableQuestions.indexOf(questionIndex);
+    // remove the 'questionIndex' from the availableQuestion Array, so that the question does not repeat
+    availableQuestions.splice(index1, 1);
+
     console.log(questionIndex);
+    console.log(availableQuestions);
     questionCounter++
 }
 
@@ -166,7 +172,6 @@ document.querySelector('.next').onclick = function() {
     } else {
         getNewQuestion();
     }
-
     // function next() {
     //     if (questionCounter === quiz.length) {
     //         console.log("quiz over");
