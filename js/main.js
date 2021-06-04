@@ -149,14 +149,39 @@ function getNewQuestion() {
     // set question number
     questionNumber.innerHTML = "Question " + (questionCounter + 1) + " of " + quiz.length;
 
-
-
+    // set question text
+    // get random question
+    const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)]
+    currentQuestion = questionIndex;
+    questionText.innerHTML = currentQuestion.q;
+    console.log(questionIndex);
+    questionCounter++
 }
+
+
+
+document.querySelector('.next').onclick = function() {
+    if (questionCounter === quiz.length) {
+        console.log("quiz over");
+    } else {
+        getNewQuestion();
+    }
+
+    // function next() {
+    //     if (questionCounter === quiz.length) {
+    //         console.log("quiz over");
+    //     } else {
+    //         getNewQuestion();
+    //     }
+    // }
+}
+
 
 window.onload = function() {
     // first we will set all questions in availableQuestions Array
     setAvailableQuestions();
     // second we will call getNewQuestion(); function
     getNewQuestion();
+
 
 }
