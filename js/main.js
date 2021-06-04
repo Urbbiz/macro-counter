@@ -115,3 +115,32 @@ menuBtn.addEventListener('click', () => {
         navbarLinks.classList.toggle('active')
     }
 });
+
+// ************ QUIZ ******************************
+
+const quiz = [{
+        q: 'Which macroelement have 9kcal per gram ?',
+        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
+        answer: 0
+    },
+    {
+        q: 'Fruits are full of ?',
+        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
+        answer: 0
+    },
+    {
+        q: 'Chicken breast are rich of ?',
+        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
+        answer: 0
+    },
+    {
+        q: 'Salmon are rich of ?',
+        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
+        answer: 0
+    },
+    {
+        q: 'Wich macroelement is main energy booster ?',
+        options: ['Protein', 'Carbohidrate', 'Fat', 'All'],
+        answer: 0
+    },
+]
