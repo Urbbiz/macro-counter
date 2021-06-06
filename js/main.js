@@ -168,6 +168,8 @@ function getNewQuestion() {
         availableOptions.push(i)
     }
 
+
+    let animationDelay = 0.15;
     // create options in html
     for (let i = 0; i < optionLen; i++) {
         // random option
@@ -178,15 +180,25 @@ function getNewQuestion() {
         availableOptions.splice(index2, 1);
         // console.log(optionIndex);
         // console.log(availableOptions);
-
         const option = document.createElement("div");
         option.innerHTML = currentQuestion.options[optionIndex];
         option.id = optionIndex;
+        option.style.animationDelay = animationDelay + 's';
+        animationDelay = animationDelay + 0.15;
         option.className = "option";
         optionContainer.appendChild(option)
+
+        window.getResult = getResult //https://stackoverflow.com/questions/17378199/uncaught-referenceerror-function-is-not-defined-with-onclick
+
+        option.setAttribute("onclick", "getResult(this)");
     }
     questionCounter++
 }
+// get result of current attempt question
+function getResult(optionElement) {
+    console.log(optionElement);
+}
+
 
 
 
@@ -211,6 +223,7 @@ window.onload = function() {
     setAvailableQuestions();
     // second we will call getNewQuestion(); function
     getNewQuestion();
+    getResult();
 
 
 }
