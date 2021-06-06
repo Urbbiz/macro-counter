@@ -168,6 +168,7 @@ function getNewQuestion() {
         availableOptions.push(i)
     }
 
+    optionContainer.innerHTML = ''; //sitas istaise, kad paspaudus next neliktu seno klausimo options pasirinkimai
 
     let animationDelay = 0.15;
     // create options in html
@@ -204,11 +205,13 @@ function getResult(element) {
 
     //get the answer by comparing the id of clicked option
     if (id === currentQuestion.answer) {
-        console.log("answer is correct");
+        // console.log("answer is correct");
         //set green color for correct option
         element.classList.add("correct");
     } else {
-        console.log("answer is wrong");
+        // console.log("answer is wrong");
+        //set green color for correct option
+        element.classList.add("wrong");
     }
 }
 
@@ -236,7 +239,7 @@ window.onload = function() {
     setAvailableQuestions();
     // second we will call getNewQuestion(); function
     getNewQuestion();
-    getResult();
+
 
 
 }
