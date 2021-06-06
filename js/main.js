@@ -212,6 +212,24 @@ function getResult(element) {
         // console.log("answer is wrong");
         //set green color for correct option
         element.classList.add("wrong");
+
+        //if answer is incorect to show correct option by adding green color
+        const optionLen = optionContainer.children.length;
+
+        for (let i = 0; i < optionLen; i++) {
+            if (parseInt(optionContainer.children[i].id) === currentQuestion.answer) {
+                optionContainer.children[i].classList.add("correct");
+            }
+        }
+    }
+
+    unclickableOptions();
+}
+
+function unclickableOptions() { //si funkcija neleis pakeisti pasirinkimo, kai jis jau pasirinktas
+    const optionLen = optionContainer.children.length;
+    for (let i = 0; i < optionLen; i++) {
+        optionContainer.children[i].classList.add("already-answered");
     }
 }
 

@@ -154,6 +154,10 @@
     color: #ffffffff;
 }
 
+.quiz-box .option-container .option.already-answered {
+    pointer-events: none;
+}
+
 .quiz-box .btn-quiz {
     margin: 15px 0;
 }
