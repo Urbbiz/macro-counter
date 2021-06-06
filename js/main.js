@@ -194,9 +194,22 @@ function getNewQuestion() {
     }
     questionCounter++
 }
+
+
 // get result of current attempt question
-function getResult(optionElement) {
-    console.log(optionElement);
+function getResult(element) {
+    // console.log(element.innerHTML);
+    const id = parseInt(element.id);
+    // console.log(typeof id);
+
+    //get the answer by comparing the id of clicked option
+    if (id === currentQuestion.answer) {
+        console.log("answer is correct");
+        //set green color for correct option
+        element.classList.add("correct");
+    } else {
+        console.log("answer is wrong");
+    }
 }
 
 
