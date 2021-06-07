@@ -131,11 +131,16 @@ const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
 const optionContainer = document.querySelector(".option-container");
 const answersIndicatorContainer = document.querySelector(".answers-indicator");
+const homeBox = document.querySelector(".home-box");
+const quizBox = document.querySelector(".quiz-box");
+const resultBox = document.querySelector(".result-box");
 
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
 let availableOptions = [];
+let correctAnswers = 0;
+let attempt = 0;
 
 // push the questions into availableQuestions Array
 function setAvailableQuestions() {
@@ -195,6 +200,7 @@ function getNewQuestion() {
         option.setAttribute("onclick", "getResult(this)");
     }
     questionCounter++
+
 }
 
 
@@ -211,6 +217,8 @@ function getResult(element) {
         element.classList.add("correct");
         // add indicator to correct
         updateAnswerIndicator("correct");
+        correctAnswers++
+        // console.log("correct:" + correctAnswers);
     } else {
         // console.log("answer is wrong");
         //set green color for correct option
@@ -227,6 +235,7 @@ function getResult(element) {
             }
         }
     }
+    attempt++
 
     unclickableOptions();
 }
@@ -241,6 +250,7 @@ function unclickableOptions() { //si funkcija neleis pakeisti pasirinkimo, kai j
 }
 
 function answersIndicator() {
+    answersIndicatorContainer.innerHTML = '';
     const totalQuestion = quiz.length;
     for (let i = 0; i < totalQuestion; i++) {
         const indicator = document.createElement("div");
@@ -259,6 +269,7 @@ function updateAnswerIndicator(markType) {
 document.querySelector('.next').onclick = function() {
     if (questionCounter === quiz.length) {
         console.log("quiz over");
+        quizOver();
     } else {
         getNewQuestion();
     }
@@ -269,6 +280,14 @@ document.querySelector('.next').onclick = function() {
     //         getNewQuestion();
     //     }
     // }
+}
+
+function quizOver() {
+    // hide quizBox
+    quizBox.classList.add("hide");
+    // show result box
+    resultBox.classList.remove("hide");
+
 }
 
 
