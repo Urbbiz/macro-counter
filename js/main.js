@@ -297,8 +297,12 @@ function quizResult() {
     resultBox.querySelector(".total-correct").innerHTML = correctAnswers;
     resultBox.querySelector(".total-wrong").innerHTML = attempt - correctAnswers;
     const percentage = (correctAnswers / quiz.length) * 100;
-    resultBox.querySelector(".precentage").innerHTML = percentage.toFixed() + "%";
+    resultBox.querySelector(".precentage").innerHTML = percentage.toFixed(2) + "%";
     resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " + quiz.length;
+}
+
+function tryAgainQuiz() {
+
 }
 
 
