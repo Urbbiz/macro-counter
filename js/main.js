@@ -300,18 +300,44 @@ function quizResult() {
     resultBox.querySelector(".precentage").innerHTML = percentage.toFixed(2) + "%";
     resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " + quiz.length;
 }
+window.tryAgainQuiz = tryAgainQuiz;
+window.startQuiz = startQuiz;
+window.goToHome = goToHome;
 
-function tryAgainQuiz() {
+
+function resetQuiz() {
+    questionCounter = 0;
+    correctAnswers = 0;
+    attempt = 0;
 
 }
 
+function tryAgainQuiz() {
+    resultBox.classList.add("hide");
+    quizBox.classList.remove("hide");
+    resetQuiz();
+    startQuiz();
+}
 
-window.onload = function() {
+function goToHome() {
+    resultBox.classList.add("hide");
+    homeBox.classList.remove("hide");
+    resetQuiz();
+}
+
+// ****************** STARTING POINT *******************
+function startQuiz() {
+    // window.onload = function() {
+
+    // hide home box 
+    homeBox.classList.add("hide");
+    // show quiz box
+    quizBox.classList.remove("hide");
+
     // first we will set all questions in availableQuestions Array
     setAvailableQuestions();
     // second we will call getNewQuestion(); function
     getNewQuestion();
+    //create answer inndicators
+    answersIndicator();
 }
-
-//create answer inndicators
-answersIndicator();
