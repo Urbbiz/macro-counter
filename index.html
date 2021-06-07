@@ -217,7 +217,70 @@
 
             <div class="recalc">RECALCULATE</div>
         </div>
+    </section>
 
+    <!-- QUIZ SECTION -->
+
+    <section class="quiz">
+
+        <div class="home-box custom-box">
+            <h3>Instructions</h3>
+            <p>Total number of questions: <span class="total-question"></span></p>
+            <button type="button" class="btn-quiz" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div class="quiz-box custom-box hide">
+            <div class="question-number">
+
+            </div>
+            <div class="question-text">
+
+            </div>
+            <div class="option-container">
+
+            </div>
+            <div class="next-question-btn">
+                <button type="button" class="btn-quiz next">Next</button>
+            </div>
+
+            <div class="answers-indicator">
+
+            </div>
+        </div>
+
+        <div class="result-box custom-box hide ">
+            <h1>Quiz Result</h1>
+            <table>
+                <tr>
+                    <td>Total Questions</td>
+                    <td><span class="total-question"></span></td>
+                </tr>
+                <tr>
+                    <td>Attempt</td>
+                    <td><span class="total-attempt"></span></td>
+                </tr>
+                <tr>
+                    <td>Correct</td>
+                    <td><span class="total-correct"></span></td>
+                </tr>
+                <tr>
+                    <td>Wrong</td>
+                    <td><span class="total-wrong"></span></td>
+                </tr>
+                <tr>
+                    <td>Precentage</td>
+                    <td><span class="precentage"></span></td>
+                </tr>
+                <tr>
+                    <td>Total Score</td>
+                    <td><span class="total-score"></span></ta>
+                </tr>
+            </table>
+
+            <button type="button" class="btn-quiz" onclick="tryAgainQuiz()">Try Again</button>
+            <button type="button" class="btn-quiz" onclick="goToHome()">Go To Home</button>
+
+        </div>
 
     </section>
 
