@@ -287,7 +287,18 @@ function quizOver() {
     quizBox.classList.add("hide");
     // show result box
     resultBox.classList.remove("hide");
+    quizResult();
+}
 
+// get quiz result
+function quizResult() {
+    resultBox.querySelector(".total-question").innerHTML = quiz.length;
+    resultBox.querySelector(".total-attempt").innerHTML = attempt;
+    resultBox.querySelector(".total-correct").innerHTML = correctAnswers;
+    resultBox.querySelector(".total-wrong").innerHTML = attempt - correctAnswers;
+    const percentage = (correctAnswers / quiz.length) * 100;
+    resultBox.querySelector(".precentage").innerHTML = percentage.toFixed() + "%";
+    resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " + quiz.length;
 }
 
 
