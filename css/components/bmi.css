@@ -195,3 +195,9 @@
                             height: 40vh;
                         }
                     } */
+                    
+                    @media(max-width: 850px) {
+                        .calculate {
+                            height: auto;
+                        }
+                    }
