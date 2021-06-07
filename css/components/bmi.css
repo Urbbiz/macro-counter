@@ -40,6 +40,7 @@
                         font-family: var(--font-family);
                         text-align: center;
                         line-height: 32vmin;
+                        cursor: pointer;
                     }
                     
                     .calculate .gender div span {
@@ -92,6 +93,7 @@
                         font-size: 5vmin;
                         font-weight: bold;
                         padding: 3vmin;
+                        cursor: pointer;
                     }
                     
                     .calculate .height .val span,
@@ -104,11 +106,12 @@
                     .calculate .height input,
                     .calculate .weight input {
                         -webkit-appearance: none;
-                        width: 90%;
+                        width: 70%;
                         height: 3vmin;
                         background: #333;
                         border-radius: 50vmin;
                         overflow: hidden;
+                        cursor: pointer;
                     }
                     
                     .calculate .height input::-webkit-slider-thumb,
@@ -134,6 +137,7 @@
                         background: #e2dede;
                         box-shadow: 0 .5vmin 1vmin .6vmin #292929;
                         text-align: center;
+                        cursor: pointer;
                     }
                     
                     .calculate .calc:hover,
