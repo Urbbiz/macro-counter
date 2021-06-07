@@ -341,3 +341,7 @@ function startQuiz() {
     //create answer inndicators
     answersIndicator();
 }
+
+window.onload = function() {
+    homeBox.querySelector(".total-question").innerHTML = quiz.length;
+}
