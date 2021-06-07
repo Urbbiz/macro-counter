@@ -130,6 +130,7 @@ const quiz = question.quiz;
 const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
 const optionContainer = document.querySelector(".option-container");
+const answersIndicatorContainer = document.querySelector(".answers-indicator");
 
 let questionCounter = 0;
 let currentQuestion;
@@ -208,10 +209,14 @@ function getResult(element) {
         // console.log("answer is correct");
         //set green color for correct option
         element.classList.add("correct");
+        // add indicator to correct
+        updateAnswerIndicator("correct");
     } else {
         // console.log("answer is wrong");
         //set green color for correct option
         element.classList.add("wrong");
+        // add indicator to wrong
+        updateAnswerIndicator("wrong");
 
         //if answer is incorect to show correct option by adding green color
         const optionLen = optionContainer.children.length;
@@ -226,11 +231,26 @@ function getResult(element) {
     unclickableOptions();
 }
 
+
+
 function unclickableOptions() { //si funkcija neleis pakeisti pasirinkimo, kai jis jau pasirinktas
     const optionLen = optionContainer.children.length;
     for (let i = 0; i < optionLen; i++) {
         optionContainer.children[i].classList.add("already-answered");
     }
+}
+
+function answersIndicator() {
+    const totalQuestion = quiz.length;
+    for (let i = 0; i < totalQuestion; i++) {
+        const indicator = document.createElement("div");
+        answersIndicatorContainer.appendChild(indicator);
+    }
+}
+
+function updateAnswerIndicator(markType) {
+    // console.log(markType);
+    answersIndicatorContainer.children[questionCounter - 1].classList.add(markType);
 }
 
 
@@ -257,7 +277,7 @@ window.onload = function() {
     setAvailableQuestions();
     // second we will call getNewQuestion(); function
     getNewQuestion();
-
-
-
 }
+
+//create answer inndicators
+answersIndicator();
