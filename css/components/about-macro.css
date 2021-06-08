@@ -27,7 +27,8 @@
     transition: 0.5s;
 }
 
-.block:hover {
+.block:hover,
+.about-macro:hover {
     transform: scale(1.15);
 }
 

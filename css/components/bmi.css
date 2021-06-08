@@ -1,6 +1,6 @@
                     .calculate,
                     .result {
-                        height: 100vh;
+                        height: 110vh;
                         /* width: 100vw; */
                         display: flex;
                         flex-direction: column;
@@ -13,11 +13,12 @@
                     }
                     
                     .calculate .title-bmi {
-                        font-size: 6.5vmin;
+                        font-size: 5vmin;
                         font-weight: bold;
                         font-family: var(--font-family);
                         /* background: -webkit-linear-gradient(45deg, #ff7400, #f4511e); */
                         background: #555;
+                        margin-top: 20px;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                     }
@@ -27,7 +28,7 @@
                         flex-direction: row;
                         justify-content: space-between;
                         align-items: center;
-                        width: 45%;
+                        width: 40%;
                     }
                     
                     .calculate .gender div {
@@ -65,6 +66,7 @@
                     .calculate .weight {
                         margin-top: 4vmin;
                         width: 75%;
+                        max-width: 700px;
                         height: 20vmin;
                         background: #e2dede;
                         box-shadow: 0 .5vmin 1vmin .6vmin #292929;
@@ -106,7 +108,7 @@
                     .calculate .height input,
                     .calculate .weight input {
                         -webkit-appearance: none;
-                        width: 70%;
+                        width: 80%;
                         height: 3vmin;
                         background: #333;
                         border-radius: 50vmin;
@@ -127,6 +129,7 @@
                     .result .recalc {
                         height: 14vmin;
                         width: 75%;
+                        max-width: 700px;
                         line-height: 14vmin;
                         margin-top: 6vmin;
                         margin-bottom: 1vmin;
@@ -150,8 +153,9 @@
                     }
                     
                     .result .bmi {
-                        height: 40vmin;
+                        height: 25vmin;
                         width: 75%;
+                        max-width: 700px;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -181,6 +185,7 @@
                         font-family: var(--font-family);
                         color: #555;
                         width: 75%;
+                        max-width: 700px;
                         text-align: center;
                         margin-top: 20vmin;
                     }
@@ -197,7 +202,8 @@
                     } */
                     
                     @media(max-width: 850px) {
-                        .calculate {
+                        .calculate,
+                        .result {
                             height: auto;
                         }
                     }
