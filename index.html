@@ -10,293 +10,321 @@
 </head>
 
 <body>
+    <div class="wrapper">
 
 
-    <!-- header -->
+        <!-- header -->
 
-    <header>
-        <nav class="navbar">
-            <div class="title">Macro Counter</div>
-            <!-- <a href="#" class="toggle-button">
+        <header>
+
+            <nav class="navbar">
+                <div class="title">Macro Counter</div>
+                <!-- <a href="#" class="toggle-button">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </a> -->
 
-            <div class="menu-btn">
-                <div class="menu-btn__burger"></div>
-            </div>
+                <div class="menu-btn">
+                    <div class="menu-btn__burger"></div>
+                </div>
 
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#macro">Macro</a></li>
-                    <li><a href="#bmi">BMI</a></li>
-                    <li><a href="#quiz">Quiz</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#macro">Macro</a></li>
+                        <li><a href="#bmi">BMI</a></li>
+                        <li><a href="#quiz">Quiz</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
 
-    <!-- total macro  -->
-    <section class="container total-macro">
-        <div class="row" id="total-macro">
-            <div class="col-12">Total</div>
-            <div class="col-3 col-xxs-6">carbs <span id="total-carbs"></span> g. </div>
-            <div class="col-3 col-xxs-6">protein <span id="total-protein"></span> g. </div>
-            <div class="col-3 col-xxs-6">fat <span id="total-fat"></span> g. </div>
-            <div class="col-3 col-xxs-6">kcal <span id="total-kcal"></span> g. </div>
+
+        <!-- total macro  -->
+        <section class="container total-macro">
+            <div class="row" id="total-macro">
+                <div class="col-12">Total</div>
+                <div class="col-3 col-xxs-6">carbs <span id="total-carbs"></span> g. </div>
+                <div class="col-3 col-xxs-6">protein <span id="total-protein"></span> g. </div>
+                <div class="col-3 col-xxs-6">fat <span id="total-fat"></span> g. </div>
+                <div class="col-3 col-xxs-6">kcal <span id="total-kcal"></span> g. </div>
+            </div>
+        </section>
+        <!-- meal render -->
+
+        <main> </main>
+
+
+        <!-- ABOUT MACRO -->
+        <section class="container" id="macro">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-macro">
+                        <img src="./img/macros/macros1.png" alt="macros">
+                        <h3> Control your diet</h3>
+                        <p>Controlling your diet is extremely important for reaching any kind of fitness goal. It’s widely known that calories and macronutrients are forming the baseline of this process. Unfortunately, most of us pay more attention to calorie.
+                            Counting than macros. Yet, this approach is wrong. It can leave you hungry and even lead to overeating. Why? In contrast to nutrition density, calorie-dense foods are always not filling. Therefore, it’s time to swoop things
+                            around! Here is why you should pay more attention to your macros.</p>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-12">
+                    <div class="block">
+                        <img src="./img/macros/carbs.png" alt="carbs">
+                        <h3> Carbohidrates</h3>
+                        <p>Carbohydrates are one of three macronutrients (protein and fat being the others) that are an important energy source for our bodies. We often think of carbs as breads, pastas, rice, and desserts, but fruits, vegetables and legumes
+                            are carbohydrates too. Carbohydrates are not an “essential” nutrient since the body can convert protein into them, but you need a moderate amount in your diet since the brain relies primarily on glucose (a breakdown product
+                            of carbohydrates) in order to survive.</p>
+                    </div>
+                </div>
+
+                <div class="col-4 col-sm-12">
+                    <div class="block">
+                        <img src="./img/macros/protein.png" alt="protein">
+                        <h3> Protein</h3>
+                        <p>Your body needs protein to stay healthy and work the way it should. More than 10,000 types are found in everything from your organs to your muscles and tissues to your bones, skin, and hair. Protein is also a critical part of the
+                            processes that fuel your energy and carry oxygen throughout your body in your blood. It also helps make antibodies that fight off infections and illnesses and helps keep cells healthy and create new ones.Not getting enough
+                            protein in your diet can lead to health issues. For example, tissue can break down and lead to muscle loss.
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-4 col-sm-12">
+                    <div class="block">
+                        <img src="./img/macros/fat.png" alt="fat">
+                        <h3> Fat</h3>
+                        <p>Fats, like protein, are also an essential dietary must - they are a great long-term source of energy and also play a vital role in maintaining healthy skin and hair, insulating body organs against shock, maintaining body temperature,
+                            hormone regulation, and promoting healthy cell function. Fat tends to get a bad rap because it is the most calorie dense macro (providing more calories per volume) and when eaten in excess it can easily stored as body fat.
+                            But other macros can also be stored as body.
+                        </p>
+                    </div>
+                </div>
+        </section>
+
+        <!-- pliusas -->
+        <div class="add-new">+</div>
+
+        <!-- add form -->
+        <div class="lightbox" data-form="add">
+            <div class="background"></div>
+            <div class="content">
+                <form class="add" id="form" action="/" method="GET">
+                    <h2 class="title">Add Meal</h2>
+                    <div class="name">
+                        <div><label for="new-name">Name:</label></div>
+                        <div class="validation" id="new-name-validation"></div>
+                        <input type="text" id="new-name" />
+                    </div>
+                    <div class="name">
+                        <div><label for="new-carb">Carb:</label></div>
+                        <div class="validation" id="new-carb-validation"></div>
+                        <input type="text" id="new-carb" />
+                    </div>
+                    <div class="name">
+                        <div><label for="new-protein">Protein:</label></div>
+                        <div class="validation" id="new-protein-validation"></div>
+                        <input type="text" id="new-protein" />
+                    </div>
+                    <div class="name">
+                        <div><label for="new-fat">Fat:</label></div>
+                        <div class="validation" id="new-fat-validation"></div>
+                        <input type="text" id="new-fat" />
+                    </div>
+                    <div class="name">
+                        <div><label for="new-kcal">Kcal:</label></div>
+                        <div class="validation" id="new-kcal-validation"></div>
+                        <input type="text" id="new-kcal" />
+                    </div class="actions">
+                    <button class="btn update right" id="button-add" type="button">Add Meal</button>
+                    <button class="btn cancel" id="button-cancel-add" type="button">Cancel</button>
+                </form>
+
+                <!-- edit form -->
+                <form class="update" data-form="update">
+                    <h2 class="title">Edit Meal</h2>
+                    <div class="name">
+                        <div><label for="edit-name">Name:</label></div>
+                        <div class="validation" id="edit-name-validation"></div>
+                        <input type="text" id="edit-name" />
+                    </div>
+                    <div class="name">
+                        <div><label for="edit-carb">Carb:</label></div>
+                        <div class="validation" id="edit-carb-validation"></div>
+                        <input type="text" id="edit-carb" />
+                    </div>
+                    <div class="name">
+                        <div><label for="edit-protein">Protein:</label></div>
+                        <div class="validation" id="edit-protein-validation"></div>
+                        <input type="text" id="edit-protein" />
+                    </div>
+                    <div class="name">
+                        <div><label for="edit-fat">Fat:</label></div>
+                        <div class="validation" id="edit-fat-validation"></div>
+                        <input type="text" id="edit-fat" />
+                    </div>
+                    <div class="name">
+                        <div><label for="edit-kcal">Kcal:</label></div>
+                        <div class="validation" id="edit-kcal-validation"></div>
+                        <input type="text" id="edit-kcal" />
+                    </div>
+                    <button class="btn cancel" id="button-cancel-update" type="button">Cancel</button>
+                    <button class="btn update right" id="button-update" type="button">Update Meal</button>
+                </form>
+            </div>
         </div>
-    </section>
-    <!-- meal render -->
 
-    <main> </main>
+        <!-- bmi section -->
 
+        <section class="bmi" id="bmi">
+            <div class="calculate">
+                <p class="title-bmi">CALCULATE YOUR BMI</p>
 
-    <!-- ABOUT MACRO -->
-    <section class="container" id="macro">
-        <div class="row">
-            <div class="col-12">
-                <div class="about-macro">
-                    <img src="./img/macros/macros1.png" alt="macros">
-                    <h3> Control your diet</h3>
-                    <p>Controlling your diet is extremely important for reaching any kind of fitness goal. It’s widely known that calories and macronutrients are forming the baseline of this process. Unfortunately, most of us pay more attention to calorie.
-                        Counting than macros. Yet, this approach is wrong. It can leave you hungry and even lead to overeating. Why? In contrast to nutrition density, calorie-dense foods are always not filling. Therefore, it’s time to swoop things around!
-                        Here is why you should pay more attention to your macros.</p>
+                <div class="gender">
+                    <div class="male active"><span>&#9794;</span></div>
+                    <div class="female"><span>&#9792;</span></div>
                 </div>
-            </div>
-            <div class="col-4 col-sm-12">
-                <div class="block">
-                    <img src="./img/macros/carbs.png" alt="carbs">
-                    <h3> Carbohidrates</h3>
-                    <p>Carbohydrates are one of three macronutrients (protein and fat being the others) that are an important energy source for our bodies. We often think of carbs as breads, pastas, rice, and desserts, but fruits, vegetables and legumes
-                        are carbohydrates too. Carbohydrates are not an “essential” nutrient since the body can convert protein into them, but you need a moderate amount in your diet since the brain relies primarily on glucose (a breakdown product of
-                        carbohydrates) in order to survive.</p>
-                </div>
-            </div>
 
-            <div class="col-4 col-sm-12">
-                <div class="block">
-                    <img src="./img/macros/protein.png" alt="protein">
-                    <h3> Protein</h3>
-                    <p>Your body needs protein to stay healthy and work the way it should. More than 10,000 types are found in everything from your organs to your muscles and tissues to your bones, skin, and hair. Protein is also a critical part of the processes
-                        that fuel your energy and carry oxygen throughout your body in your blood. It also helps make antibodies that fight off infections and illnesses and helps keep cells healthy and create new ones.Not getting enough protein in your
-                        diet can lead to health issues. For example, tissue can break down and lead to muscle loss.
+                <div class="height">
+                    <p>HEIGHT</p>
 
+                    <p class="val">
+                        <i class="sub-bmi">-</i>
+                        <span>50</span>cm
+                        <i class="add-bmi">+</i>
                     </p>
+                    <input type="range" min="50" max="220" value="50">
                 </div>
-            </div>
 
-            <div class="col-4 col-sm-12">
-                <div class="block">
-                    <img src="./img/macros/fat.png" alt="fat">
-                    <h3> Fat</h3>
-                    <p>Fats, like protein, are also an essential dietary must - they are a great long-term source of energy and also play a vital role in maintaining healthy skin and hair, insulating body organs against shock, maintaining body temperature,
-                        hormone regulation, and promoting healthy cell function. Fat tends to get a bad rap because it is the most calorie dense macro (providing more calories per volume) and when eaten in excess it can easily stored as body fat. But
-                        other macros can also be stored as body.
+                <div class="weight">
+                    <p>WEIGHT</p>
+
+                    <p class="val">
+                        <i class="sub-bmi">-</i>
+                        <span>10</span>kg
+                        <i class="add-bmi">+</i>
                     </p>
+                    <input type="range" min="10" max="180" value="10">
+                </div>
+
+                <div class="calc">CLCULATE</div>
+
+            </div>
+            <div class="result">
+                <div class="bmi">
+                    <div class="title-bmi">YOUR BMI</div>
+                    <div class="val">0.00</div>
+                </div>
+
+                <div class="text-bmi"> Your BMI is normal!</div>
+
+                <div class="recalc">RECALCULATE</div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+
+        <section class="quiz" id="quiz">
+
+            <div class="home-box custom-box">
+                <h1>QUIZ</h1>
+                <p>Total number of questions: <span class="total-question"></span></p>
+                <div class="start-button">
+                    <button type="button" class="btn-quiz" onclick="startQuiz()">Start Quiz</button>
                 </div>
             </div>
-    </section>
 
-    <!-- pliusas -->
-    <div class="add-new">+</div>
+            <div class="quiz-box custom-box hide">
+                <div class="question-number">
 
-    <!-- add form -->
-    <div class="lightbox" data-form="add">
-        <div class="background"></div>
-        <div class="content">
-            <form class="add" id="form" action="/" method="GET">
-                <h2 class="title">Add Meal</h2>
-                <div class="name">
-                    <div><label for="new-name">Name:</label></div>
-                    <div class="validation" id="new-name-validation"></div>
-                    <input type="text" id="new-name" />
                 </div>
-                <div class="name">
-                    <div><label for="new-carb">Carb:</label></div>
-                    <div class="validation" id="new-carb-validation"></div>
-                    <input type="text" id="new-carb" />
+                <div class="question-text">
+
                 </div>
-                <div class="name">
-                    <div><label for="new-protein">Protein:</label></div>
-                    <div class="validation" id="new-protein-validation"></div>
-                    <input type="text" id="new-protein" />
+                <div class="option-container">
+
                 </div>
-                <div class="name">
-                    <div><label for="new-fat">Fat:</label></div>
-                    <div class="validation" id="new-fat-validation"></div>
-                    <input type="text" id="new-fat" />
+                <div class="next-question-btn">
+                    <button type="button" class="btn-quiz next">Next</button>
                 </div>
-                <div class="name">
-                    <div><label for="new-kcal">Kcal:</label></div>
-                    <div class="validation" id="new-kcal-validation"></div>
-                    <input type="text" id="new-kcal" />
-                </div class="actions">
-                <button class="btn update right" id="button-add" type="button">Add Meal</button>
-                <button class="btn cancel" id="button-cancel-add" type="button">Cancel</button>
-            </form>
 
-            <!-- edit form -->
-            <form class="update" data-form="update">
-                <h2 class="title">Edit Meal</h2>
-                <div class="name">
-                    <div><label for="edit-name">Name:</label></div>
-                    <div class="validation" id="edit-name-validation"></div>
-                    <input type="text" id="edit-name" />
+                <div class="answers-indicator">
+
                 </div>
-                <div class="name">
-                    <div><label for="edit-carb">Carb:</label></div>
-                    <div class="validation" id="edit-carb-validation"></div>
-                    <input type="text" id="edit-carb" />
-                </div>
-                <div class="name">
-                    <div><label for="edit-protein">Protein:</label></div>
-                    <div class="validation" id="edit-protein-validation"></div>
-                    <input type="text" id="edit-protein" />
-                </div>
-                <div class="name">
-                    <div><label for="edit-fat">Fat:</label></div>
-                    <div class="validation" id="edit-fat-validation"></div>
-                    <input type="text" id="edit-fat" />
-                </div>
-                <div class="name">
-                    <div><label for="edit-kcal">Kcal:</label></div>
-                    <div class="validation" id="edit-kcal-validation"></div>
-                    <input type="text" id="edit-kcal" />
-                </div>
-                <button class="btn cancel" id="button-cancel-update" type="button">Cancel</button>
-                <button class="btn update right" id="button-update" type="button">Update Meal</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- bmi section -->
-
-    <section class="bmi" id="bmi">
-        <div class="calculate">
-            <p class="title-bmi">CALCULATE YOUR BMI</p>
-
-            <div class="gender">
-                <div class="male active"><span>&#9794;</span></div>
-                <div class="female"><span>&#9792;</span></div>
             </div>
 
-            <div class="height">
-                <p>HEIGHT</p>
+            <div class="result-box custom-box hide ">
+                <h1>Quiz Result</h1>
+                <table>
+                    <tr>
+                        <td>Total Questions</td>
+                        <td><span class="total-question"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Attempt</td>
+                        <td><span class="total-attempt"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Correct</td>
+                        <td><span class="total-correct"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Wrong</td>
+                        <td><span class="total-wrong"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Precentage</td>
+                        <td><span class="precentage"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Total Score</td>
+                        <td><span class="total-score"></span></ta>
+                    </tr>
+                </table>
 
-                <p class="val">
-                    <i class="sub-bmi">-</i>
-                    <span>50</span>cm
-                    <i class="add-bmi">+</i>
-                </p>
-                <input type="range" min="50" max="220" value="50">
-            </div>
-
-            <div class="weight">
-                <p>WEIGHT</p>
-
-                <p class="val">
-                    <i class="sub-bmi">-</i>
-                    <span>10</span>kg
-                    <i class="add-bmi">+</i>
-                </p>
-                <input type="range" min="10" max="180" value="10">
-            </div>
-
-            <div class="calc">CLCULATE</div>
-
-        </div>
-        <div class="result">
-            <div class="bmi">
-                <div class="title-bmi">YOUR BMI</div>
-                <div class="val">0.00</div>
-            </div>
-
-            <div class="text-bmi"> Your BMI is normal!</div>
-
-            <div class="recalc">RECALCULATE</div>
-        </div>
-    </section>
-
-    <!-- QUIZ SECTION -->
-
-    <section class="quiz" id="quiz">
-
-        <div class="home-box custom-box">
-            <h1>QUIZ</h1>
-            <p>Total number of questions: <span class="total-question"></span></p>
-            <div class="start-button">
-                <button type="button" class="btn-quiz" onclick="startQuiz()">Start Quiz</button>
-            </div>
-        </div>
-
-        <div class="quiz-box custom-box hide">
-            <div class="question-number">
+                <button type="button" class="btn-quiz" onclick="tryAgainQuiz()">Try Again</button>
+                <button type="button" class="btn-quiz" onclick="goToHome()">Quit</button>
 
             </div>
-            <div class="question-text">
 
+        </section>
+
+        <!-- footer -->
+
+        <footer class="container">
+            <div class="row">
+                <div class="col-6 col-xs-9 col-xxs-12  date" id="date-js"></div>
+                <div class="col-6 col-xs-3 col-xxs-12 visitors">Visitors <span id="count"> 0 </span></div>
             </div>
-            <div class="option-container">
+        </footer>
 
-            </div>
-            <div class="next-question-btn">
-                <button type="button" class="btn-quiz next">Next</button>
-            </div>
 
-            <div class="answers-indicator">
-
-            </div>
-        </div>
-
-        <div class="result-box custom-box hide ">
-            <h1>Quiz Result</h1>
-            <table>
-                <tr>
-                    <td>Total Questions</td>
-                    <td><span class="total-question"></span></td>
-                </tr>
-                <tr>
-                    <td>Attempt</td>
-                    <td><span class="total-attempt"></span></td>
-                </tr>
-                <tr>
-                    <td>Correct</td>
-                    <td><span class="total-correct"></span></td>
-                </tr>
-                <tr>
-                    <td>Wrong</td>
-                    <td><span class="total-wrong"></span></td>
-                </tr>
-                <tr>
-                    <td>Precentage</td>
-                    <td><span class="precentage"></span></td>
-                </tr>
-                <tr>
-                    <td>Total Score</td>
-                    <td><span class="total-score"></span></ta>
-                </tr>
-            </table>
-
-            <button type="button" class="btn-quiz" onclick="tryAgainQuiz()">Try Again</button>
-            <button type="button" class="btn-quiz" onclick="goToHome()">Quit</button>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
 
         </div>
-
-    </section>
-
-    <!-- footer -->
-
-    <footer class="container">
-        <div class="row">
-            <div class="col-6 col-xs-9 col-xxs-12  date" id="date-js"></div>
-            <div class="col-6 col-xs-3 col-xxs-12 visitors">Visitors <span id="count"> 0 </span></div>
         </div>
-    </footer>
 
-
-    <script src="./js/main.js" type="module"></script>
+        <script src="./js/main.js" type="module"></script>
 
 </body>
 
